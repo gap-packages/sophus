@@ -4,7 +4,7 @@
 ##
 #W  Computing a nilpotent basis for a Lie algebra.
 ##
-#H  $Id: lienp.gi,v 1.4 2004/06/28 14:09:57 gap Exp $
+#H  $Id: lienp.gi,v 1.5 2004/07/02 09:20:08 gap Exp $
 
 
 ######################################################################

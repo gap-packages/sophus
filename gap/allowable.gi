@@ -8,7 +8,7 @@
 #W  The algorithm is not explained here, see [O'Brien, J. Symbolic Comput.
 #W  vol. 9, pp. 677-698].
 ##
-#H  $Id: allowable.gi,v 1.3 2004/06/15 14:53:32 gap Exp $
+#H  $Id: allowable.gi,v 1.4 2004/07/15 14:05:51 gap Exp $
 
 #############################################################################
 ##
@@ -469,7 +469,8 @@ OrbitsOfAllowableSubgroups := function( dim1, dim2, dimN, p, G )
     fi;
 
     orbs := OrbitsDomain( G, els, act );
-    
+
+
     return List( orbs, x -> AllowableSubgroupByMatrix( 
                    MatrixOfLabel( x[1], info )));
 end;
@@ -559,7 +560,7 @@ OrbitOfDescendant := function( L, K )
     info := ComputeAllowableInfo( Dimension( K ) - Dimension( L ), 
                     Dimension( M ), Dimension( N ), p );
     
-    G := ReduceGenSet2( G );
+    #G := ReduceGenSet( G );
         
     act := function( l, g )
         local y, x;

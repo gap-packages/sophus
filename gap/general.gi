@@ -3,7 +3,7 @@
 #W  general.gi                Sophus package                 Csaba Schneider 
 ##
 ## Some general functions.
-#H  $Id: general.gi,v 1.4 2004/06/28 14:09:57 gap Exp $
+#H  $Id: general.gi,v 1.5 2004/07/02 09:20:08 gap Exp $
 
 ######################################################################
 ## 

@@ -5,7 +5,7 @@
 #W This file contains some methods to deal with automorphisms of nilpotent
 #W Lie algebras.
 ##
-#H  $Id: lieautoops.gi,v 1.3 2004/06/04 11:48:08 gap Exp $
+#H  $Id: lieautoops.gi,v 1.4 2004/07/02 09:20:08 gap Exp $
 
 #############################################################################
 ##

@@ -2,16 +2,16 @@
 ##
 #W  PackageInfo.g            Sophus Package                  Csaba Schneider 
 ##                                                               
-#H  $Id: PackageInfo.g,v 1.9 2004/07/02 08:16:26 gap Exp $
+#H  $Id: PackageInfo.g,v 1.15 2004/10/18 14:00:29 gap Exp $
 
 
 SetPackageInfo( rec(
 
   PackageName := "Sophus",
   Subtitle := "Computing in nilpotent Lie algebras",
-  Version := "1.1",
-  Date    := "22/06/2004",
-  ArchiveURL := "http://www.sztaki.hu/~schneider/Research/Sophus/sophus1r1",
+  Version := "1.12",
+  Date    := "18/10/2004",
+  ArchiveURL := "http://www.sztaki.hu/~schneider/Research/Sophus/sophus1r12",
   ArchiveFormats := ".tar.gz",
 
 ##    - if no 'TextFiles' or 'BinaryFiles' are given and a .zoo archive is
@@ -45,11 +45,11 @@ SetPackageInfo( rec(
     )
   ],  
 
-  Status  := "deposited",
-  #CommunicatedBy 
-  #        := "Alexander Konovalov",
-  #AcceptDate 
-  #        := "",
+  Status  := "accepted",
+  CommunicatedBy 
+          := "Alexander Konovalov (Zaporozhye)",
+  AcceptDate 
+          := "10/2004",
 
 ##  For a central overview of all packages and a collection of all package
 ##  archives it is necessary to have two files accessible which should be
@@ -100,7 +100,7 @@ SetPackageInfo( rec(
     # use same as in GAP            
     BookName  := "Sophus",
     # format/extension can be one of .zoo, .tar.gz, .tar.bz2, -win.zip
-    Archive   := "www.sztaki.hu/~schneider/Research/Sophus/sophusdoc1r1.tar.gz",
+    Archive   := "www.sztaki.hu/~schneider/Research/Sophus/sophusdoc1r12.tar.gz",
     HTMLStart := "Doc/chap0.html",
     PDFFile   := "Doc/manual.pdf",
     # the path to the .six file used by GAP's help system

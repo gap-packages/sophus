@@ -5,7 +5,7 @@
 #W The methods in this file are used to compute the descendants of a 
 #W nilpotent Lie algebra.
 ## 
-#H  $Id: descendant.gi,v 1.6 2004/06/28 14:09:57 gap Exp $
+#H  $Id: descendant.gi,v 1.9 2004/10/18 13:17:38 gap Exp $
 
 
 
@@ -70,22 +70,25 @@ function( L, step )
     fi;
 
     Info( LieInfo, 1, "Computing Cover Info" );
-    
+  
+    if 
+      Length( LieLowerCentralSeries( L )) = 
+      Length( LieLowerCentralSeries( LieCover( L )))  
+      or 
+      step > Dimension( LieMultiplicator( LieCover( L ))) then 
+        return []; 
+    fi;
+
+
+    A := ShallowCopy( AutomorphismGroupOfNilpotentLieAlgebra( L ));
+    L := A.liealg;
     
     C := LieCover( L );
     
     M := LieMultiplicator( C );
     N := LieNucleus( C );
     
-    if 
-      Length( LieLowerCentralSeries( L )) = 
-      Length( LieLowerCentralSeries( C ))  
-      or 
-      step > Dimension( M ) then 
-        return []; 
-    fi;
 	
-    A := ShallowCopy( AutomorphismGroupOfNilpotentLieAlgebra( L ));
     
     C := LieCover( L );
     

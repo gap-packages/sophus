@@ -5,7 +5,7 @@
 #W  This file contains the functions for isomorphism testing between 
 #W  nilpotent Lie algebras.
 ##
-#H  $Id: lieisom.gi,v 1.6 2004/07/02 08:14:01 gap Exp $
+#H  $Id: lieisom.gi,v 1.8 2004/07/15 14:05:51 gap Exp $
 
 
 
@@ -188,7 +188,7 @@ end;
                       List( [1..d], x->NilpotentBasis( Q1L )[x] ));
         
         KL := Subspace( ML, Basis( Kernel( fL ))); 
-        
+	
         KKim := Subspace( ML, List( Basis( KK ), 
                         x->LinearCombination( Basis( CL ),
                                 Coefficients( Basis( CK ), x ))));
@@ -220,7 +220,7 @@ end;
         else
                 return false;
         fi;
-        
+
         newiso := [];
         
         for i in [1..Dimension( Q1K )] do
@@ -230,15 +230,13 @@ end;
             bv := Image( fK, bv );
             Add( newiso, bv );
         od;
-        
-        
+	
         npbas := RelativeBasisNC( Basis( Q1K ), newiso );
         npbas!.weights := LieNBWeights( NilpotentBasis( Q1L ));
         npbas!.definitions := LieNBDefinitions( NilpotentBasis( Q1L ));
         Setter( IsNilpotentBasis )( npbas, true );
         Setter( NilpotentBasis )( Q1K, npbas );
-        
-         
+
         if StructureConstantsTable( NilpotentBasis( Q1L ) ){[1..Dimension( Q1L )]} <> 
            StructureConstantsTable( NilpotentBasis( Q1K ) ){[1..Dimension( Q1K )]} then
             Error( "Structure constants do not match" );

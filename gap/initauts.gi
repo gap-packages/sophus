@@ -7,7 +7,7 @@
 #W part of the automorphism group and hence to accelerate the automorphism
 #W group computation. The user is encouraged to experiment with these 
 #W functions.
-#H  $Id: initauts.gi,v 1.4 2004/06/15 11:57:48 gap Exp $
+#H  $Id: initauts.gi,v 1.5 2004/07/15 14:05:51 gap Exp $
 
 	  
 
@@ -18,7 +18,7 @@
 ##
 
 NLAFingerprintSmall := function( L, U )
-    return Flat( [TrivialSubalgebra( U ), Size(ProductSpace( L, U )) ]);
+    return Dimension( ProductSpace( L, U ));
 end;
 
 
@@ -191,10 +191,9 @@ InitNLAAutomorphismGroupOver := function( L )
     V    := GF(p)^r;
     norm := NormedVectors( V );
     part := PartitionMinimalOveralgebras( L, npbasis, norm );
+	
     stab := PartitionStabilizer( GL( r, p ), part, norm );
-
-    #Error();
-    
+	
     # the Frattini Quotient
     H := L/LieDerivedSubalgebra( L );
     kern := InitAgAutosNL( H, p );

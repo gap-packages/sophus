@@ -5,7 +5,7 @@
 #W  This file contains the methods to compute the cover of a nilpotent
 #W  Lie algebra.
 ##
-#H  $Id: liecover.gi,v 1.4 2004/06/28 14:09:57 gap Exp $
+#H  $Id: liecover.gi,v 1.5 2004/07/02 09:20:08 gap Exp $
 
 ######################################################################
 ## 

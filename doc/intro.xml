@@ -1,4 +1,4 @@
-<!-- $Id: intro.xml,v 1.5 2004/07/02 08:14:01 gap Exp $ -->
+<!-- $Id: intro.xml,v 1.6 2004/10/18 13:17:38 gap Exp $ -->
 <Chapter Label="Intro">
 <Heading>The theory</Heading>    
 
@@ -60,7 +60,7 @@ there are
 <P/>
 A Lie
 algebra <Math>K</Math> is said to be a <Emph>central extension</Emph> of <Math>L</Math> if <Math>L\cong
-K/I</Math> for some ideal <Math>I</Math> such that <Math>I\leq Z(K)\cap L'</Math>.
+K/I</Math> for some ideal <Math>I</Math> such that <Math>I\leq Z(K)\cap K'</Math>.
 Suppose that <Math>c</Math> denotes the nilpotency
 class of <Math>L</Math>. Then a Lie algebra <Math>K</Math>
 is an <Emph>immediate descendant</Emph> of <Math>L</Math> if <Math>K</Math> has class <Math>c+1</Math> and <Math>K/\gamma_{c+1}(K)\cong L</Math>. As in this case <Math>\gamma_{c+1}(K)\leq Z(K)\cap K'</Math>, it follows

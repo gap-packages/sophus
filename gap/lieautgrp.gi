@@ -6,7 +6,7 @@
 #W group of a nilpotent Lie algebra. Parts of this package use 
 #W the autpgrp package by Eick and O'Brien.
 ##
-#H  $Id: lieautgrp.gi,v 1.6 2004/06/28 14:09:57 gap Exp $
+#H  $Id: lieautgrp.gi,v 1.8 2004/07/15 14:05:51 gap Exp $
 
 
 
@@ -29,6 +29,8 @@ function( a )
     L := Source( a );
     CL := LieCover( L );
 
+    #Error();
+
     if a = IdentityNilpotentLieAutomorphism( L ) then
         return IdentityNilpotentLieAutomorphism( CL );
     fi;
@@ -36,8 +38,8 @@ function( a )
     basCL := Basis( CL );
     basL := basCL{[1..Dimension( L )]}; 
     d := MinimalGeneratorNumber( L );
-    gensCL := List( [1..d], x-> basCL[x] );
-    
+    gensCL := List( [1..d], x-> basCL[x] );    
+
     imsCL := List( a!.mingensetimgs, 
                    x -> LinearCombination( basL, Coefficients( a!.basis, x )));
     
