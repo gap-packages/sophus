@@ -9,11 +9,13 @@
 
 
                            The Sophus Package
-                           ------------------ The  Sophus  package  is
-written  to compute  with  nilpotent Lie  algebras  over finite  prime
-fields. Using  this package,  you can compute  the cover, the  list of
-immediate  descendants,  and  the   automorphism  group  of  such  Lie
-algebras. You can also test if two such Lie algebras are isomorphic.
+                           ------------------ 
+
+The Sophus package  is written to compute with  nilpotent Lie algebras
+over  finite prime  fields. Using  this package,  you can  compute the
+cover, the  list of immediate descendants, and  the automorphism group
+of such Lie  algebras. You can also test if two  such Lie algebras are
+isomorphic.
 
 
              System requirements and installation of Sophus

@@ -17,9 +17,6 @@
 ##  the field of <p> elements.
 ##  
 
-DescendantsOfStep1OfAbelianLieAlgebra := NewOperation( 
-            "DescendantsOfStep1OfAbelianLieAlgebra", [ IsPosInt, IsPosInt ] );
-
 InstallMethod( DescendantsOfStep1OfAbelianLieAlgebra,
    "for abelian Lie algebras", true, [ IsPosInt, IsPosInt ], 0,
 
@@ -59,9 +56,6 @@ end );
 ##  
 ##  Computes the <step>-step descendants of the nilpotent Lie algebra <L>.
 ##  
-
-Descendants := NewOperation( 
-            "Descendants", [ IsLieAlgebra, IsPosInt ] );
 
 InstallMethod( Descendants,
    "for nilpotent Lie algebras", true, [ IsLieAlgebra, IsPosInt ], 0,

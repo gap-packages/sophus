@@ -17,8 +17,6 @@
 ##  Lifts automorphism <a> to the cover of the domain of <a>.
 ##  
 
-LiftAutorphismToLieCover := NewOperation( "LiftAutorphismToLieCover", 
-                                     [ IsNilpotentLieAutomorphism ] );
 InstallMethod( 
         LiftAutorphismToLieCover,
         "for nilpotent Lie algebra automorphisms",
@@ -82,8 +80,6 @@ end;
 ##  determined by <a>.
 ##  
 
- LinearActionOnMultiplicator := NewOperation( "LinearActionOnMultiplicator", 
-                                     [ IsNilpotentLieAutomorphism ] );
 InstallMethod( 
         LinearActionOnMultiplicator,
         "for nilpotent Lie algebra automorphisms",

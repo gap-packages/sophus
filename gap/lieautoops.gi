@@ -13,9 +13,6 @@
 ##
 ## Constructs an automorphism of the nilpotent Lie algebra <L>
 
-NilpotentLieAutomorphism := NewOperation( "NilpotentLieAutomorphism", 
-                            [ IsLieNilpotentOverFp, IsList, IsList ] );
-
 InstallMethod( NilpotentLieAutomorphism,
    "for nilpotent Lie algebras", true, [ IsLieNilpotentOverFp, 
 	           		       IsList, IsList ], 0,
@@ -200,7 +197,6 @@ end );
 ## 
 #M ImagesElm
 ##
-
 
 InstallMethod( ImagesElm,
                "for nilpotent Lie algebra automorphisms",

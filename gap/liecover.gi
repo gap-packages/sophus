@@ -13,8 +13,6 @@
 ##
 ## Is a Lie cover of something?
 
-IsLieCover := NewProperty( "IsLieCover", IsLieNilpotentOverFp );
-
 InstallMethod( 
         IsLieCover,
         "for nilpotent Lie algebras with nilpotent presentation",
@@ -37,8 +35,6 @@ end );
 ##  If L is a Lie cover then the next method returns what it is a 
 ##  cover of.
 
-CoverOf := NewAttribute( "CoverOf", IsLieCover );
-
 InstallMethod( 
         CoverOf,
         "for nilpotent Lie algebras with nilpotent presentation",
@@ -56,8 +52,6 @@ end );
 #A CoverHomomorphism( <L> )
 ##  
 ## Returns the homom between the cover and the original
-
-CoverHomomorphism := NewAttribute( "CoverHomomorphism", IsLieCover );
 
 InstallMethod( 
         CoverHomomorphism,
@@ -121,8 +115,6 @@ end;
 #A LieCover( <L> )
 ## 
 ##  Computes the cover of the Lie algebra L
-
-LieCover := NewAttribute( "LieCover", IsLieAlgebra );
 
 InstallMethod( 
         LieCover,
@@ -341,8 +333,6 @@ end );
 ## 
 ## returns the nucleus
 
-LieNucleus := NewAttribute( "LieNucleus", IsLieNilpotentOverFp );
-
 InstallMethod( 
         LieNucleus,
         "for nilpotent Lie algebras",
@@ -364,8 +354,6 @@ end );
 #A LieMultiplicator( <L> )
 ## 
 ## returns the multiplicator of a Lie algebra
-
-LieMultiplicator := NewAttribute( "LieMultiplicator", IsLieNilpotentOverFp );
 
 InstallMethod( 
         LieMultiplicator,

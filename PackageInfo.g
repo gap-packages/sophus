@@ -2,16 +2,16 @@
 ##
 #W  PackageInfo.g            Sophus Package                  Csaba Schneider 
 ##                                                               
-#H  $Id: PackageInfo.g,v 1.6 2004/06/28 14:09:57 gap Exp $
+#H  $Id: PackageInfo.g,v 1.9 2004/07/02 08:16:26 gap Exp $
 
 
 SetPackageInfo( rec(
 
   PackageName := "Sophus",
   Subtitle := "Computing in nilpotent Lie algebras",
-  Version := "1.0",
+  Version := "1.1",
   Date    := "22/06/2004",
-  ArchiveURL := "http://www.sztaki.hu/~schneider/Research/Sophus/sophus1r0",
+  ArchiveURL := "http://www.sztaki.hu/~schneider/Research/Sophus/sophus1r1",
   ArchiveFormats := ".tar.gz",
 
 ##    - if no 'TextFiles' or 'BinaryFiles' are given and a .zoo archive is
@@ -38,7 +38,7 @@ SetPackageInfo( rec(
                          "Csaba Schneider\n",
                          "Informatics Laboratory\n",
                          "Computer and Automation Research Institute\n",
-                         "The Hungarian Academy of Sciences",
+                         "The Hungarian Academy of Sciences\n",
 			 "1111 Budapest, Lagymanyosi u. 11, Hungary" ]),
       Place         := "Budapest",
       Institution   := "Computer and Automation Research Institute"
@@ -100,7 +100,7 @@ SetPackageInfo( rec(
     # use same as in GAP            
     BookName  := "Sophus",
     # format/extension can be one of .zoo, .tar.gz, .tar.bz2, -win.zip
-    Archive   := "www.sztaki.hu/~schneider/Research/Sophus/sophusdoc.tar.gz",
+    Archive   := "www.sztaki.hu/~schneider/Research/Sophus/sophusdoc1r1.tar.gz",
     HTMLStart := "Doc/chap0.html",
     PDFFile   := "Doc/manual.pdf",
     # the path to the .six file used by GAP's help system
@@ -125,7 +125,7 @@ SetPackageInfo( rec(
     # without these, the package will not load
     NeededOtherPackages := [["autpgrp","1.2"]],
     # without these the package will issue a warning while loading
-    SuggestedOtherPackages := [ ],
+    SuggestedOtherPackages := [["gapdoc", "0.9999"], ["laguna", "3.3"]],
     # needed external conditions (programs, operating system, ...)  provide 
     # just strings as text or
     # pairs [text, URL] where URL  provides further information

@@ -1,4 +1,4 @@
-<!-- $Id: manual.xml,v 1.5 2004/06/18 13:41:38 gap Exp $ -->
+<!-- $Id: manual.xml,v 1.6 2004/07/02 09:20:08 gap Exp $ -->
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 
@@ -10,7 +10,7 @@
 <TitlePage>
   <Title>&Sophus;</Title>
   <Subtitle>Computing in nilpotent Lie algebras</Subtitle>
-  <Version>Version 1.0</Version>
+  <Version>Version 1.1</Version>
 
   <Author>
   Csaba Schneider

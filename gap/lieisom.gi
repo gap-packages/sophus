@@ -5,7 +5,7 @@
 #W  This file contains the functions for isomorphism testing between 
 #W  nilpotent Lie algebras.
 ##
-#H  $Id: lieisom.gi,v 1.5 2004/06/28 14:09:57 gap Exp $
+#H  $Id: lieisom.gi,v 1.6 2004/07/02 08:14:01 gap Exp $
 
 
 
@@ -31,8 +31,6 @@ end;
 ######################################################################
 ##
 #F  LiftIsomorphismToLieCover( <L>, <K>, a )
-
-LiftIsomorphismToLieCover := NewOperation( "LiftIsomorphismToLieCover", [ IsLieAlgebra, IsLieAlgebra, IsMatrix ] );
 
 InstallMethod( 
         LiftIsomorphismToLieCover,
@@ -115,8 +113,6 @@ end;
 #O AreIsomorphicNilpotentLieAlgebras( <L>, <K> )
 ## 
 ## Decides if two nilpotent Lie algebras are isomorphic
-
- AreIsomorphicNilpotentLieAlgebras := NewOperation( "AreIsomorphicNilpotentLieAlgebras", [ IsLieAlgebra, IsLieAlgebra ] );
 
  InstallMethod( 
          AreIsomorphicNilpotentLieAlgebras,
@@ -218,7 +214,7 @@ end;
         t := Runtime();
         
         if KKim in O then
-            isoKL := RepresentativeAction( Group( A ),  O, 
+            isoKL := RepresentativeAction( Group( A ), O, 
                              KL, KKim,  function( U, g ) 
                 return ApplyAut( ML, U, RestrictIsomorphismToLieMultiplicator( CL, g )); end); 
         else

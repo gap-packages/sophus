@@ -13,9 +13,6 @@
 ## 
 ## returns true if <L> has a nilpotent basis.
 
-IsLieAlgebraWithNB := NewProperty( "IsLieAlgebraWithNB", 
-		                    IsLieNilpotentOverFp );
-
 InstallMethod( 
         IsLieAlgebraWithNB,
         "for nilpotent Lie algebras", 
@@ -39,9 +36,6 @@ end );
 ## The function computes a nilpotent basis for a nilpotent Lie algebra.
 ## See the manual for explanation
 
-NilpotentBasis := NewAttribute( "NilpotentBasis", IsLieAlgebra, 
-				"mutable"  );
-    
 InstallMethod( 
         NilpotentBasis,
         "for nilpotent Lie algebras",
@@ -135,8 +129,6 @@ end );
 #P IsNilpotentBasis( <B> )
 ##
 
-IsNilpotentBasis := NewProperty( "IsNilpotentBasis", IsBasis );
-
 InstallMethod( 
         IsNilpotentBasis,
         "for bases of Lie algebras",
@@ -159,8 +151,6 @@ end );
 ## gets the definitions for a nilpotent basis <B>
 ##
 
-LieNBDefinitions := NewAttribute( "LieNBDefinitions", IsNilpotentBasis );
-
 InstallMethod( 
         LieNBDefinitions,
         "for NB bases of Lie algebras",
@@ -175,8 +165,6 @@ end );
 ## 
 #A LieNBWeights( <B> )
 ## Gets the weights from a NilpotentBasis
-
-LieNBWeights := NewAttribute( "LieNBWeights", IsNilpotentBasis );
 
 InstallMethod( 
         LieNBWeights,

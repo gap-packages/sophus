@@ -26,8 +26,6 @@ InstallImmediateMethod(
 #A MinimalGeneratorNumber( <L> )
 ##
 
-MinimalGeneratorNumber := NewAttribute( "MinimalGeneratorNumber", 
-                                  IsLieNilpotent );
 InstallMethod( 
         MinimalGeneratorNumber,
         "for nilpotent Lie algebras",

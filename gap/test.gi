@@ -10,7 +10,7 @@ SophusTest := function()
 	local i, L1, L2, L3, L4, L5, L6, L7, size;
 
 
-	Print(  "Compting Lie algebras over GF(2)\n" );
+	Print(  "Computing Lie algebras over GF(2)\n" );
 	
 	L1 := [ AbelianLieAlgebra( GF(2), 1 ) ];;	 
 	L2 := [ AbelianLieAlgebra( GF(2), 2 ) ];;
