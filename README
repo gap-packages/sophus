@@ -1,0 +1,37 @@
+#########################################################################
+##  
+#W  README          	The Sophus package    		Csaba Schneider
+##
+##
+#W  Readme file for the Sophus package.
+##
+#H  $Id: README,v 1.2 2004/06/21 09:16:07 gap Exp $
+
+
+                           The Sophus Package
+                           ------------------ The  Sophus  package  is
+written  to compute  with  nilpotent Lie  algebras  over finite  prime
+fields. Using  this package,  you can compute  the cover, the  list of
+immediate  descendants,  and  the   automorphism  group  of  such  Lie
+algebras. You can also test if two such Lie algebras are isomorphic.
+
+
+             System requirements and installation of Sophus
+             ----------------------------------------------
+
+Sophus does  not use external  binaries and, therefore,  works without
+restrictions on the type of  the operation system.  It is designed for
+GAP4.4  and  no  compatibility  with  previous  releases  of  GAP4  is
+guaranteed.
+
+To use Sophus online help it  is necessary to install the GAP4 package
+GAPDoc by Frank  Luebeck and Max Neunhoeffer, which  is available from
+the GAP site or http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc/.
+
+Sophus is  distributed in  standard formats and  can be  obtained from
+http://www.sztaki.hu/~schneider/Sophus.  Follow the instructions there
+to unpack the archive.
+
+
+
+
