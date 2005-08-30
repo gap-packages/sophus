@@ -2,16 +2,16 @@
 ##
 #W  PackageInfo.g            Sophus Package                  Csaba Schneider 
 ##                                                               
-#H  $Id: PackageInfo.g,v 1.18 2005/08/30 12:33:16 gap Exp $
+#H  $Id: PackageInfo.g,v 1.17 2005/08/30 06:53:29 gap Exp $
 
 
 SetPackageInfo( rec(
 
   PackageName := "Sophus",
   Subtitle := "Computing in nilpotent Lie algebras",
-  Version := "1.21",
+  Version := "1.22",
   Date    := "30/08/2005",
-  ArchiveURL := "http://www.sztaki.hu/~schneider/Research/Sophus/sophus1r21",
+  ArchiveURL := "http://www.sztaki.hu/~schneider/Research/Sophus/sophus1r22",
   ArchiveFormats := ".tar.gz",
 
 ##    - if no 'TextFiles' or 'BinaryFiles' are given and a .zoo archive is
@@ -100,7 +100,7 @@ SetPackageInfo( rec(
     # use same as in GAP            
     BookName  := "Sophus",
     # format/extension can be one of .zoo, .tar.gz, .tar.bz2, -win.zip
-    Archive   := "www.sztaki.hu/~schneider/Research/Sophus/sophusdoc1r21.tar.gz",
+    Archive   := "http://www.sztaki.hu/~schneider/Research/Sophus/sophusdoc1r22.tar.gz",
     HTMLStart := "Doc/chap0.html",
     PDFFile   := "Doc/manual.pdf",
     # the path to the .six file used by GAP's help system
@@ -123,9 +123,9 @@ SetPackageInfo( rec(
     # list of pairs [package name, (least) version],  package name is case
     # insensitive, least version denoted with '>=' prepended to version string.
     # without these, the package will not load
-    NeededOtherPackages := [["autpgrp","1.2"]],
+    NeededOtherPackages := [["autpgrp","1.2"],["gapdoc", "0.9999"]],
     # without these the package will issue a warning while loading
-    SuggestedOtherPackages := [["gapdoc", "0.9999"], ["laguna", "3.3"]],
+    SuggestedOtherPackages := [],
     # needed external conditions (programs, operating system, ...)  provide 
     # just strings as text or
     # pairs [text, URL] where URL  provides further information
