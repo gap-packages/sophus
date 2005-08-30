@@ -7,7 +7,7 @@
 #W part of the automorphism group and hence to accelerate the automorphism
 #W group computation. The user is encouraged to experiment with these 
 #W functions.
-#H  $Id: initauts.gi,v 1.5 2004/07/15 14:05:51 gap Exp $
+#H  $Id: initauts.gi,v 1.6 2005/08/09 17:06:07 gap Exp $
 
 	  
 
@@ -181,7 +181,7 @@ InitNLAAutomorphismGroupOver := function( L )
     
     # set up
     r := MinimalGeneratorNumber( L );
-    p := Characteristic( UnderlyingField( L ));
+    p := Characteristic( LeftActingDomain( L ));
 
     npbasis := NilpotentBasis( L );
     
@@ -283,7 +283,7 @@ InitNLAutomorphismGroupChar := function( L )
 
     # set up 
     r := MinimalGeneratorNumber( L );
-    p := Characteristic( UnderlyingField( L ));
+    p := Characteristic( LeftActingDomain( L ));
     z := One(GF(p));
     bas := NilpotentBasis( L );
 
@@ -331,7 +331,7 @@ InitNLAutomorphismGroup := function( L )
 
     # set up
     r := MinimalGeneratorNumber( L );
-    f := UnderlyingField( L );
+    f := LeftActingDomain( L );
     S := GL( r, f );
     H := L/LieDerivedSubalgebra( L );
     kern := InitAgAutosNL( H, Characteristic( f ));

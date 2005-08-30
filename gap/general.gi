@@ -3,7 +3,7 @@
 #W  general.gi                Sophus package                 Csaba Schneider 
 ##
 ## Some general functions.
-#H  $Id: general.gi,v 1.5 2004/07/02 09:20:08 gap Exp $
+#H  $Id: general.gi,v 1.6 2005/08/09 17:06:07 gap Exp $
 
 ######################################################################
 ## 
@@ -17,8 +17,8 @@ InstallImmediateMethod(
     IsLieNilpotent, 0,
     function( R )
     return 
-           IsFinite( UnderlyingField( R )) and
-           IsPrimeField( UnderlyingField( R ));
+           IsFinite( LeftActingDomain( R )) and
+           IsPrimeField( LeftActingDomain( R ));
     end );
 
 ######################################################################

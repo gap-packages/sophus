@@ -2,16 +2,16 @@
 ##
 #W  PackageInfo.g            Sophus Package                  Csaba Schneider 
 ##                                                               
-#H  $Id: PackageInfo.g,v 1.15 2004/10/18 14:00:29 gap Exp $
+#H  $Id: PackageInfo.g,v 1.18 2005/08/30 12:33:16 gap Exp $
 
 
 SetPackageInfo( rec(
 
   PackageName := "Sophus",
   Subtitle := "Computing in nilpotent Lie algebras",
-  Version := "1.12",
-  Date    := "18/10/2004",
-  ArchiveURL := "http://www.sztaki.hu/~schneider/Research/Sophus/sophus1r12",
+  Version := "1.21",
+  Date    := "30/08/2005",
+  ArchiveURL := "http://www.sztaki.hu/~schneider/Research/Sophus/sophus1r21",
   ArchiveFormats := ".tar.gz",
 
 ##    - if no 'TextFiles' or 'BinaryFiles' are given and a .zoo archive is
@@ -100,7 +100,7 @@ SetPackageInfo( rec(
     # use same as in GAP            
     BookName  := "Sophus",
     # format/extension can be one of .zoo, .tar.gz, .tar.bz2, -win.zip
-    Archive   := "www.sztaki.hu/~schneider/Research/Sophus/sophusdoc1r12.tar.gz",
+    Archive   := "www.sztaki.hu/~schneider/Research/Sophus/sophusdoc1r21.tar.gz",
     HTMLStart := "Doc/chap0.html",
     PDFFile   := "Doc/manual.pdf",
     # the path to the .six file used by GAP's help system
@@ -151,7 +151,7 @@ SetPackageInfo( rec(
 ##  provides some improvements of the GAP library which are likely to enhance 
 ##  the overall system performance for many users.
 
-  Autoload := false,
+  Autoload := true,
 
 ##  *Optional*, but recommended: path relative to package root to a file which 
 ##  contains as many tests of the package functionality as sensible.

@@ -5,7 +5,7 @@
 #W This file contains some methods to deal with automorphisms of nilpotent
 #W Lie algebras.
 ##
-#H  $Id: lieautoops.gi,v 1.4 2004/07/02 09:20:08 gap Exp $
+#H  $Id: lieautoops.gi,v 1.5 2005/08/09 17:06:07 gap Exp $
 
 #############################################################################
 ##
@@ -85,7 +85,7 @@ function( L, gens, imgs )
     fi;
     
     if basis = basisimgs then 
-            matrix := IdentityMat( Dimension( L ), UnderlyingField( L ));
+            matrix := IdentityMat( Dimension( L ), LeftActingDomain( L ));
         
     else   # compute matrix
         matrix := [];

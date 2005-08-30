@@ -5,7 +5,7 @@
 #W The methods in this file are used to compute the descendants of a 
 #W nilpotent Lie algebra.
 ## 
-#H  $Id: descendant.gi,v 1.9 2004/10/18 13:17:38 gap Exp $
+#H  $Id: descendant.gi,v 1.10 2005/08/09 17:06:07 gap Exp $
 
 
 
@@ -100,7 +100,7 @@ function( L, step )
     G := Group( Union( List( A.glAutos, x -> x!.mat ), 
                  List( A.agAutos, x -> x!.mat )));
     
-    p := Characteristic( UnderlyingField( L ));
+    p := Characteristic( LeftActingDomain( L ));
     V := GF( p )^Dimension( M );
     
     dim := Dimension( M ) - step;
@@ -145,7 +145,7 @@ function( L, step )
     
     algs := List( new_Ts, 
                   x -> LieAlgebraByStructureConstants( 
-                          UnderlyingField( L ), x ));	
+                          LeftActingDomain( L ), x ));	
     
     for i in algs do 
         Setter( IsLieNilpotent )( i, true );

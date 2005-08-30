@@ -4,7 +4,7 @@
 ##
 #W  Computing a nilpotent basis for a Lie algebra.
 ##
-#H  $Id: lienp.gi,v 1.5 2004/07/02 09:20:08 gap Exp $
+#H  $Id: lienp.gi,v 1.7 2005/08/22 13:13:09 gap Exp $
 
 
 ######################################################################
@@ -25,8 +25,6 @@ InstallMethod(
         return false;
     fi;
 end );
-
-
 
 
 ######################################################################
@@ -54,7 +52,7 @@ InstallMethod(
       lastlength,         # the no. of generators with the last computed weight
       indices,            # indices of basis elements in a spanning set
       class,              # nilpotency class of L
-     list,               # list to store coeffs
+      list,               # list to store coeffs
       npb,                # the new basis
       S;                  # lower central series
     

@@ -5,7 +5,7 @@
 #W  The methods in this file were written based on the methods in the 
 #W  file of the autpgrp package.
 ##
-#H  $Id: nicestab.gi,v 1.2 2004/06/04 11:48:08 gap Exp $
+#H  $Id: nicestab.gi,v 1.3 2005/08/09 17:06:07 gap Exp $
 
 #############################################################################
 ##
@@ -18,7 +18,7 @@ TryPermOperationNL := function( A )
     # if its too big, then don't try.
     L := A.liealg;
     r := MinimalGeneratorNumber( L );
-    p := Characteristic( UnderlyingField( L ));
+    p := Characteristic( LeftActingDomain( L ));
     if (p^r - 1) / (p - 1) > 1100 then 
         Unbind( A.glOper );
         return; 

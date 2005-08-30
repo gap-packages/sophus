@@ -8,7 +8,7 @@
 #W  The algorithm is not explained here, see [O'Brien, J. Symbolic Comput.
 #W  vol. 9, pp. 677-698].
 ##
-#H  $Id: allowable.gi,v 1.4 2004/07/15 14:05:51 gap Exp $
+#H  $Id: allowable.gi,v 1.6 2005/08/09 17:06:07 gap Exp $
 
 #############################################################################
 ##
@@ -24,7 +24,7 @@ ReduceGenSet := function( G )
     
     Info( LieInfo, 1, "Computing minimal set of generators." );
     
-    E := Elements( UnderlyingVectorSpace( G ));
+    E := Elements( DefaultFieldOfMatrixGroup( G )^DimensionOfMatrixGroup( G ));
     
     gens := GeneratorsOfGroup( G );
     
@@ -131,7 +131,7 @@ DefinitionSet := function( M, N )
         Error( "M is not an allowable subgroup" );
     fi;
     
-    F := UnderlyingField( M );
+    F := LeftActingDomain( M );
     R := F^dim;
     
     U := M;
@@ -264,7 +264,7 @@ StandardMatrix := function( M, N )
         Error( "M is not an allowable subgroup" );
     fi;
     
-    F := UnderlyingField( M );
+    F := LeftActingDomain( M );
     R := F^dim;
     
     defset := DefinitionSet( M, N );
@@ -366,8 +366,8 @@ MatrixOfLabel := function( label, info )
     offset := Sum( info.nrswithdefsets{[1..nodefset-1]});
     number := label-offset;
 
-    entries := Reversed( List( DigitsNumber( number, p ), 
-                       x->CharValue( x )*Z(p)^0 ));
+    entries := List( CoefficientsQadic( number, p ), 
+                       x->x*Z(p)^0 );
     
     
     Append( entries, List( [1..info.nrsofallowablepositions[nodefset]-
@@ -494,7 +494,7 @@ LabelOfDescendant := function( L, K )
     M := LieMultiplicator( C );
     N := LieNucleus( C );
     
-    p := Characteristic( UnderlyingField( L ));
+    p := Characteristic( LeftActingDomain( L ));
     V := GF( p )^Dimension( M );
     
     f := AlgebraHomomorphismByImagesNC( C, K, NilpotentBasis( C ){[1..d]}, 
@@ -539,7 +539,7 @@ OrbitOfDescendant := function( L, K )
     C := LieCover( L );
     M := LieMultiplicator( C );
     N := LieNucleus( C );
-    p := Characteristic( UnderlyingField( L ));
+    p := Characteristic( LeftActingDomain( L ));
     
     for i in A.glAutos do
         LinearActionOnMultiplicator( i );
@@ -599,7 +599,7 @@ SameOrbitOfDescendant := function( L, K1, K2 )
     C := LieCover( L );
     M := LieMultiplicator( C );
     N := LieNucleus( C );
-    p := Characteristic( UnderlyingField( L ));
+    p := Characteristic( LeftActingDomain( L ));
     
     for i in A.glAutos do
         LinearActionOnMultiplicator( i );

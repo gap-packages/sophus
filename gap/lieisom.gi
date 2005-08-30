@@ -5,7 +5,7 @@
 #W  This file contains the functions for isomorphism testing between 
 #W  nilpotent Lie algebras.
 ##
-#H  $Id: lieisom.gi,v 1.8 2004/07/15 14:05:51 gap Exp $
+#H  $Id: lieisom.gi,v 1.11 2005/08/30 06:53:29 gap Exp $
 
 
 
@@ -56,8 +56,6 @@ InstallMethod(
     hK := AlgebraHomomorphismByImagesNC( CK, K, 
                   List( [1..d], x->basCK[x] ), 
                   List( [1..d], x->basK[x] ));        
-    
-    #Error();
     
     gensCL := List( [1..d], x-> basCL[x]);
     
@@ -121,7 +119,7 @@ end;
          function( L, K )
 
      local SL, d, SK, QL, QK, A, A1, CL, CK, fK, KK, fL, KL, Li, F, KKim,
-           Q1L, Q1K, O, S, OS, r, R, newbas, bv, newiso, isoKL, i, VAut, s, x, y, t, LM, ML, h, G, G1, npbas;
+           Q1L, Q1K, O, S, OS, r, R, newbas, bv, newiso, isoKL, i, ii, VAut, s, x, y, t, LM, ML, h, G, G1, npbas, f;
 
      
      VAut := function( L, x, y )
@@ -154,7 +152,7 @@ end;
 		TryNextMethod();
     fi;
     
-    F := UnderlyingField( L );
+    F := LeftActingDomain( L );
     SL := LieLowerCentralSeries( L );
     SK := LieLowerCentralSeries( K );
     
@@ -165,14 +163,17 @@ end;
     fi;
     
     if Length( SL ) = 2 then return true; fi;
-    
+   
     Q1L := L/SL[2]; Q1K := K/SK[2];
     
     A := GeneratorsOfGroup( GL( d, F ));
     
     for i in [2..Length( SL ) - 1] do
         
-        QL := Q1L; QK := Q1K; Q1L := L/SL[i+1]; Q1K := K/SK[i+1];
+        QL := Q1L; QK := Q1K; Q1L := L/SL[i+1]; 
+        
+        f := NaturalHomomorphismByIdeal( K, SK[i+1] );
+        Q1K := Images( f );
         
         CK := LieCover( QK ); CL := LieCover( QL ); 
         ML := LieMultiplicator( CL );
@@ -188,7 +189,7 @@ end;
                       List( [1..d], x->NilpotentBasis( Q1L )[x] ));
         
         KL := Subspace( ML, Basis( Kernel( fL ))); 
-	
+        
         KKim := Subspace( ML, List( Basis( KK ), 
                         x->LinearCombination( Basis( CL ),
                                 Coefficients( Basis( CK ), x ))));
@@ -220,11 +221,11 @@ end;
         else
                 return false;
         fi;
-
+        
         newiso := [];
         
-        for i in [1..Dimension( Q1K )] do
-            bv := PreImagesRepresentative( fL, NilpotentBasis( Q1L )[i]);
+        for ii in [1..Dimension( Q1K )] do
+            bv := PreImagesRepresentative( fL, NilpotentBasis( Q1L )[ii]);
             bv := LinearCombination( NilpotentBasis( CK ), 
                           Coefficients( NilpotentBasis( CL ), bv )*isoKL );
             bv := Image( fK, bv );
@@ -236,20 +237,28 @@ end;
         npbas!.definitions := LieNBDefinitions( NilpotentBasis( Q1L ));
         Setter( IsNilpotentBasis )( npbas, true );
         Setter( NilpotentBasis )( Q1K, npbas );
-
         if StructureConstantsTable( NilpotentBasis( Q1L ) ){[1..Dimension( Q1L )]} <> 
            StructureConstantsTable( NilpotentBasis( Q1K ) ){[1..Dimension( Q1K )]} then
             Error( "Structure constants do not match" );
         fi;
         
+        
         Info( LieInfo, 1, "Time to find isomorphism: ", Runtime() - t );
         t := Runtime();
+        
+        newbas := 
+          List( NilpotentBasis( Q1K ), x->PreImagesRepresentative( f, x ));
+        Append( newbas, BasisVectors( Basis( SK[i+1] )));
+
+        K := LieAlgebraByStructureConstants( F, 
+                     StructureConstantsTable( Basis( K, newbas )));
+        SK := LieLowerCentralSeries( K );
         
         A := List( S, x -> List( NilpotentBasis( Q1L ), 
                      y -> Coefficients( NilpotentBasis( Q1L ), 
                           Image( fL, LinearCombination( NilpotentBasis( CL ), 
                           Coefficients( NilpotentBasis( CL ), 
-                          PreImagesRepresentative( fL, y ))^x )))));
+                          PreImagesRepresentative( fL, y ))^x )))));        
         
         Info( LieInfo, 1, "Time to lift ", Length( A ), " automorphisms: ", Runtime() - t );
         t := Runtime();

@@ -6,7 +6,7 @@
 #W group of a nilpotent Lie algebra. Parts of this package use 
 #W the autpgrp package by Eick and O'Brien.
 ##
-#H  $Id: lieautgrp.gi,v 1.8 2004/07/15 14:05:51 gap Exp $
+#H  $Id: lieautgrp.gi,v 1.9 2005/08/09 17:06:07 gap Exp $
 
 
 
@@ -132,7 +132,7 @@ LinearActionpOfGroupOnMultiplier := function( A  )
     for aut in A.agAutos do
         LinearActionOnMultiplicator( aut );
     od;
-    A.field := UnderlyingField( L );
+    A.field := LeftActingDomain( L );
     A.prime := Characteristic( A.field );
     A.one!.mat := 1;
 end;
@@ -188,7 +188,7 @@ RestrictAutomorphismsToQuotient := function( A, C, K )
     
     T := StructureConstantsTable( Basis( C ));
     new_T := LieQuotientTable( T, M, dimL );
-    Q := AlgebraByStructureConstants( UnderlyingField( L ), new_T );
+    Q := AlgebraByStructureConstants( LeftActingDomain( L ), new_T );
     
     basis := Basis( Q );
     basis!.weights := C!.pseudo_weights{remaining};
@@ -222,7 +222,7 @@ RestrictAutomorphismsToQuotient := function( A, C, K )
                     imgcomp := SumSCT( imgcomp, c );
                 od;
                 imgcomp := Compact2Coeffs( 
-                                   imgcomp, dimC, Zero( UnderlyingField( L )));
+                                   imgcomp, dimC, Zero( LeftActingDomain( L )));
                 Add( newimgs, LinearCombination( basis, imgcomp{remaining}));
             od;
             Add( new.glAutos, NilpotentLieAutomorphism( Q, mingensetQ, 
@@ -253,7 +253,7 @@ RestrictAutomorphismsToQuotient := function( A, C, K )
                     imgcomp := SumSCT( imgcomp, c );
                 od;
                 imgcomp := Compact2Coeffs( imgcomp, dimC, 
-                                   Zero( UnderlyingField( L )));
+                                   Zero( LeftActingDomain( L )));
                 Add( newimgs, LinearCombination( basis, imgcomp{remaining}));
             od;
             Add( new.agAutos, NilpotentLieAutomorphism( Q, 
@@ -280,7 +280,7 @@ RestrictAutomorphismsToQuotient := function( A, C, K )
                             LieLowerCentralSeries( Q ))-1]);
     
     Append( new.agAutos, cent );
-    Append( new.agOrder, List( cent, x-> Characteristic( UnderlyingField( L ))));
+    Append( new.agOrder, List( cent, x-> Characteristic( LeftActingDomain( L ))));
     new.size := new.glOrder*Product( new.agOrder );
     
     return new;
@@ -325,7 +325,7 @@ InstallMethod(
     
     n := Length( basis );
     r := MinimalGeneratorNumber( L );
-    f := UnderlyingField( L );
+    f := LeftActingDomain( L );
     
     A := GeneratorsOfGroup( GL( r, f ));
     

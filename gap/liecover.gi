@@ -5,7 +5,7 @@
 #W  This file contains the methods to compute the cover of a nilpotent
 #W  Lie algebra.
 ##
-#H  $Id: liecover.gi,v 1.5 2004/07/02 09:20:08 gap Exp $
+#H  $Id: liecover.gi,v 1.6 2005/08/09 17:06:07 gap Exp $
 
 ######################################################################
 ## 
@@ -156,7 +156,7 @@ InstallMethod(
 	TryNextMethod();
     fi;	
  
-    F := UnderlyingField( L );
+    F := LeftActingDomain( L );
     Bas := NilpotentBasis( L );
     weights := ShallowCopy( LieNBWeights( Bas )); 
     defs := List(  LieNBDefinitions( Bas ), x->ShallowCopy( x ));

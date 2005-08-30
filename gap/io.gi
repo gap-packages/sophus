@@ -5,7 +5,7 @@
 #W The functions in this file implement the input-output methods of the Sophus
 #W package.
 ##
-#H  $Id: io.gi,v 1.7 2004/06/15 11:57:48 gap Exp $
+#H  $Id: io.gi,v 1.8 2005/08/09 17:06:07 gap Exp $
 
 
 
@@ -49,7 +49,7 @@ WriteNilpotentLieAlgebraToString := function( L )
     #Print( "Coeff list is: ", coeffs, "\n" );
     
     sum := 0;
-    p := Characteristic( UnderlyingField( L ));
+    p := Characteristic( LeftActingDomain( L ));
     for i in [1..Length( coeffs )] do
         sum := sum + coeffs[i]*p^(i-1);
     od;
