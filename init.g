@@ -2,9 +2,9 @@
 ##
 #W  init.g                   Sophus package                   Csaba Schneider 
 ##
-#H  $Id: init.g,v 1.10 2005/08/30 06:53:29 gap Exp $
+#H  $Id: init.g,v 1.11 2006/01/23 14:34:59 gap Exp $
 
-DeclareAutoPackage( "Sophus", "1.22", 
+DeclareAutoPackage( "Sophus", "1.23", 
   function()
     if not CompareVersionNumbers( VERSION, "4.3fix4" ) then
       Info( InfoWarning, 1, "This version of the Sophus package requires ",
