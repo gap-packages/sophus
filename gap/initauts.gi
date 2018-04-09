@@ -7,7 +7,6 @@
 #W part of the automorphism group and hence to accelerate the automorphism
 #W group computation. The user is encouraged to experiment with these 
 #W functions.
-#H  $Id: initauts.gi,v 1.6 2005/08/09 17:06:07 gap Exp $
 
 	  
 

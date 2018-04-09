@@ -2,7 +2,6 @@
 ##
 #W  PackageInfo.g            Sophus Package                  Csaba Schneider 
 ##                                                               
-#H  $Id: PackageInfo.g,v 1.19 2006/01/23 14:34:59 gap Exp $
 
 
 SetPackageInfo( rec(

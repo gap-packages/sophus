@@ -5,7 +5,6 @@
 #W  This file contains the functions for isomorphism testing between 
 #W  nilpotent Lie algebras.
 ##
-#H  $Id: lieisom.gi,v 1.11 2005/08/30 06:53:29 gap Exp $
 
 
 

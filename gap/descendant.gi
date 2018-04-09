@@ -5,7 +5,6 @@
 #W The methods in this file are used to compute the descendants of a 
 #W nilpotent Lie algebra.
 ## 
-#H  $Id: descendant.gi,v 1.10 2005/08/09 17:06:07 gap Exp $
 
 
 

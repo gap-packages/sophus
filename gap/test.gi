@@ -4,7 +4,6 @@
 ##
 #W  Testing the Sophus package
 ##
-#H  $Id: test.gi,v 1.3 2004/07/02 09:20:08 gap Exp $
 
 SophusTest := function()
 	local i, L1, L2, L3, L4, L5, L6, L7, size;

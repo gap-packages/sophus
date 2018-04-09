@@ -6,7 +6,6 @@
 #W group of a nilpotent Lie algebra. Parts of this package use 
 #W the autpgrp package by Eick and O'Brien.
 ##
-#H  $Id: lieautgrp.gi,v 1.9 2005/08/09 17:06:07 gap Exp $
 
 
 

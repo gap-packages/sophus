@@ -2,7 +2,6 @@
 ##
 #W  init.g                   Sophus package                   Csaba Schneider 
 ##
-#H  $Id: init.g,v 1.11 2006/01/23 14:34:59 gap Exp $
 
 DeclareAutoPackage( "Sophus", "1.23", 
   function()

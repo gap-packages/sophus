@@ -6,7 +6,6 @@
 ##  algebra. This is needed to obtain a sct of a quotient of a nilpotent
 ##  Lie algebra efficiently.
 ##
-#H  $Id: liesct.gi,v 1.1 2004/02/27 09:19:11 gap Exp $
 
 
 ######################################################################

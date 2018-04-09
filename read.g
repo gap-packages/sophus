@@ -2,7 +2,6 @@
 ##
 #W  read.g                   Sophus package                   Csaba Schneider 
 ##
-#H  $Id: 
 
 ReadPackage( "Sophus", "gap/general.gi" );
 ReadPackage( "Sophus", "gap/lienp.gi" );

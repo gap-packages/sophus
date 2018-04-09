@@ -8,7 +8,6 @@
 #W  The algorithm is not explained here, see [O'Brien, J. Symbolic Comput.
 #W  vol. 9, pp. 677-698].
 ##
-#H  $Id: allowable.gi,v 1.6 2005/08/09 17:06:07 gap Exp $
 
 #############################################################################
 ##

@@ -5,7 +5,6 @@
 #W The functions in this file implement the input-output methods of the Sophus
 #W package.
 ##
-#H  $Id: io.gi,v 1.8 2005/08/09 17:06:07 gap Exp $
 
 
 

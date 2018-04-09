@@ -4,7 +4,6 @@
 ##
 #W  Declarations for the Sophus package.
 ##
-#H  $Id: sophus.gd,v 1.5 2004/07/02 09:20:08 gap Exp $
 
 DeclareInfoClass( "LieInfo" );
 
