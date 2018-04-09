@@ -333,22 +333,6 @@ The list so obtained is written into <A>file</A>. The name of this list will be 
    </Description>
 </ManSection>
 
-<ManSection>
-   <Func Name="SophusBuildManual" 
-         Arg=""/>
-   <Description>
-Builds Sophus manual.
-</Description>
-</ManSection>
-
-<ManSection>
-   <Func Name="SophusBuildManualHTML" 
-         Arg=""/>
-   <Description>
-Builds Sophus manual in html format.
-   </Description>
-</ManSection>
-
 </Section>
 
 

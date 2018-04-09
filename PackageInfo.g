@@ -54,7 +54,7 @@ SetPackageInfo( rec(
                                    "/sophus-", ~.Version ),
   ArchiveFormats := ".tar.gz",
 
-  AbstractHTML := "http://www.sztaki.hu/~schneider/Research/Sophus/",
+  AbstractHTML := "",
 
   PackageDoc := rec(
     BookName  := "Sophus",
@@ -67,7 +67,7 @@ SetPackageInfo( rec(
   ),
 
   Dependencies := rec(
-    GAP := ">= 4.7",
+    GAP := ">= 4.8",
     NeededOtherPackages := [["autpgrp","1.2"]],
     SuggestedOtherPackages := [],
     ExternalConditions := []
@@ -75,6 +75,36 @@ SetPackageInfo( rec(
 
   AvailabilityTest := ReturnTrue,
   TestFile := "tst/testall.g",
-  Keywords := [ "nilpotent Lie algebras" ]
+  Keywords := [ "nilpotent Lie algebras" ],
+
+  AutoDoc := rec(
+      TitlePage := rec(
+          Abstract := """
+&Sophus; is a GAP4 package to compute with nilpotent
+Lie algebras over finite prime fields. In particular, the package can be
+used to compute certain central extensions and the automorphism group
+of such Lie algebras. &Sophus; also enables its user to test
+isomorphism between two nilpotent Lie algebras. The author of the
+package used it to construct all Lie algebras of dimension at most 9
+over <Math>\mathbb F_2</Math>.
+""",
+          Copyright := """
+<Index>License</Index>
+&copyright; 2004, 2005 Csaba Schneider<P/>
+The &Sophus; package is free software;
+you can redistribute it and/or modify it under the terms of the
+<URL Text="GNU General Public License">http://www.fsf.org/licenses/gpl.html</URL>
+as published by the Free Software Foundation; either version 2 of the License,
+or (at your option) any later version.
+""",
+          Acknowledgements := """
+Most of the work on this package was carried out while I held a
+research position at the Technische Universität Braunschweig. I
+would like to express my gratitude to the staff and the students of
+the Institut für Geometrie for their interest in this work. Special
+thanks go to Bettina Eick for her rôle in completing this project.
+""",
+      ),
+  ),
 
 ));
