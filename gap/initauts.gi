@@ -188,7 +188,7 @@ InitNLAAutomorphismGroupOver := function( L )
     # get partition stabilizer
     base := IdentityMat( r, GF(p) );
     V    := GF(p)^r;
-    norm := NormedVectors( V );
+    norm := NormedRowVectors( V );
     part := PartitionMinimalOveralgebras( L, npbasis, norm );
 	
     stab := PartitionStabilizer( GL( r, p ), part, norm );

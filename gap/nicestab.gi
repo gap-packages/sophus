@@ -29,7 +29,7 @@ TryPermOperationNL := function( A )
     # now we compute it
     base := IdentityMat( r, GF(p) );
     V    := GF(p)^r;               
-    norm := NormedVectors( V );    
+    norm := NormedRowVectors( V );
     f    := function( pt, a ) return NormedRowVector( pt * a ); end;
     M    := Group( A.glOper, base );
     iso  := ActionHomomorphism( M, norm, f );
