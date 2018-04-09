@@ -13,7 +13,7 @@
 
 InstallImmediateMethod(
     IsLieNilpotentOverFp,
-    IsLieNilpotent, 0,
+    IsLieNilpotent and HasLeftActingDomain, 0,
     function( R )
     return 
            IsFinite( LeftActingDomain( R )) and
