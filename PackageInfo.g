@@ -10,8 +10,6 @@ SetPackageInfo( rec(
   Subtitle := "Computing in nilpotent Lie algebras",
   Version := "1.23",
   Date    := "03/02/2006",
-  ArchiveURL := "http://www.sztaki.hu/~schneider/Research/Sophus/sophus1r23",
-  ArchiveFormats := ".tar.gz",
 
   Persons := [ 
     rec( 
@@ -29,21 +27,35 @@ SetPackageInfo( rec(
                          "1111 Budapest, Lagymanyosi u. 11, Hungary" ]),
       Place         := "Budapest",
       Institution   := "Computer and Automation Research Institute"
-    )
+    ),
+
+    rec(
+      LastName      := "GAP Team",
+      FirstNames    := "The",
+      IsAuthor      := false,
+      IsMaintainer  := true,
+      Email         := "support@gap-system.org",
+    ),
   ],  
 
-  Status  := "accepted",
-  CommunicatedBy 
-          := "Alexander Konovalov (Zaporozhye)",
-  AcceptDate 
-          := "10/2004",
+  Status := "accepted",
+  CommunicatedBy := "Alexander Konovalov (Zaporozhye)",
+  AcceptDate := "10/2004",
 
-  README_URL := "http://www.sztaki.hu/~schneider/Research/Sophus/README",
-  PackageInfoURL := "http://www.sztaki.hu/~schneider/Research/Sophus/PackageInfo.g",
+  PackageWWWHome  := "https://gap-packages.github.io/sophus/",
+  README_URL      := Concatenation( ~.PackageWWWHome, "README" ),
+  PackageInfoURL  := Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
+  SourceRepository := rec(
+      Type := "git",
+      URL := "https://github.com/gap-packages/sophus",
+  ),
+  IssueTrackerURL := Concatenation( ~.SourceRepository.URL, "/issues" ),
+  ArchiveURL      := Concatenation( ~.SourceRepository.URL,
+                                   "/releases/download/v", ~.Version,
+                                   "/sophus-", ~.Version ),
+  ArchiveFormats := ".tar.gz",
 
   AbstractHTML := "http://www.sztaki.hu/~schneider/Research/Sophus/",
-
-  PackageWWWHome := "http://www.sztaki.hu/~schneider/Research/Sophus/",
 
   PackageDoc := rec(
     BookName  := "Sophus",
