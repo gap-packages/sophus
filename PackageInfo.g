@@ -16,17 +16,16 @@ SetPackageInfo( rec(
       LastName      := "Schneider",
       FirstNames    := "Csaba",
       IsAuthor      := true,
-      IsMaintainer  := true,
-      Email         := "csaba.schneider@sztaki.hu",
-      WWWHome       := "http://www.sztaki.hu/~schneider",
+      IsMaintainer  := false,
+      Email         := "csaba@mat.ufmg.br",
+      WWWHome       := "http://www.mat.ufmg.br/~csaba/",
       PostalAddress := Concatenation( [
-                         "Csaba Schneider\n",
-                         "Informatics Laboratory\n",
-                         "Computer and Automation Research Institute\n",
-                         "The Hungarian Academy of Sciences\n",
-                         "1111 Budapest, Lagymanyosi u. 11, Hungary" ]),
-      Place         := "Budapest",
-      Institution   := "Computer and Automation Research Institute"
+                         "Departamento de Matemática\n",
+                         "Instituto de Ciências Exatas\n",
+                         "Universidade Federal de Minas Gerais (UFMG)\n",
+                         "Belo Horizonte, Brasil" ]),
+      Place         := "Belo Horizonte",
+      Institution   := "Universidade Federal de Minas Gerais"
     ),
 
     rec(
