@@ -19,51 +19,46 @@ DeclareProperty( "IsLieNilpotentOverFp", IsLieNilpotent );
 DeclareAttribute( "AutomorphismGroupOfNilpotentLieAlgebra",
                   IsLieAlgebra );
 
-DescendantsOfStep1OfAbelianLieAlgebra := NewOperation( 
-            "DescendantsOfStep1OfAbelianLieAlgebra", [ IsPosInt, IsPosInt ] );
+DeclareOperation( "DescendantsOfStep1OfAbelianLieAlgebra", [ IsPosInt, IsPosInt ] );
 
-Descendants := NewOperation( 
-            "Descendants", [ IsLieAlgebra, IsPosInt ] );
+DeclareOperation( "Descendants", [ IsLieAlgebra, IsPosInt ] );
 
-MinimalGeneratorNumber := NewAttribute( "MinimalGeneratorNumber", 
-                                  IsLieNilpotent );
+DeclareAttribute( "MinimalGeneratorNumber", IsLieNilpotent );
 
-LiftAutorphismToLieCover := NewOperation( "LiftAutorphismToLieCover", 
-                                     [ IsNilpotentLieAutomorphism ] );
+DeclareOperation( "LiftAutorphismToLieCover", 
+                  [ IsNilpotentLieAutomorphism ] );
 
-LinearActionOnMultiplicator := NewOperation( "LinearActionOnMultiplicator", 
-                                     [ IsNilpotentLieAutomorphism ] );
+DeclareOperation( "LinearActionOnMultiplicator", 
+                  [ IsNilpotentLieAutomorphism ] );
 
-NilpotentLieAutomorphism := NewOperation( "NilpotentLieAutomorphism", 
-                            [ IsLieNilpotentOverFp, IsList, IsList ] );
+DeclareOperation( "NilpotentLieAutomorphism", 
+                  [ IsLieNilpotentOverFp, IsList, IsList ] );
 
-IsLieCover := NewProperty( "IsLieCover", IsLieNilpotentOverFp );
+DeclareProperty( "IsLieCover", IsLieNilpotentOverFp );
 
-CoverOf := NewAttribute( "CoverOf", IsLieCover );
+DeclareAttribute( "CoverOf", IsLieCover );
 
-CoverHomomorphism := NewAttribute( "CoverHomomorphism", IsLieCover );
+DeclareAttribute( "CoverHomomorphism", IsLieCover );
 
-LieCover := NewAttribute( "LieCover", IsLieAlgebra );
+DeclareAttribute( "LieCover", IsLieAlgebra );
 
-LieNucleus := NewAttribute( "LieNucleus", IsLieNilpotentOverFp );
+DeclareAttribute( "LieNucleus", IsLieNilpotentOverFp );
 
-LieMultiplicator := NewAttribute( "LieMultiplicator", IsLieNilpotentOverFp );
+DeclareAttribute( "LieMultiplicator", IsLieNilpotentOverFp );
 
-LiftIsomorphismToLieCover := NewOperation( "LiftIsomorphismToLieCover", [ IsLieAlgebra, IsLieAlgebra, IsMatrix ] );
+DeclareOperation( "LiftIsomorphismToLieCover", [ IsLieAlgebra, IsLieAlgebra, IsMatrix ] );
 
-AreIsomorphicNilpotentLieAlgebras := NewOperation( "AreIsomorphicNilpotentLieAlgebras", [ IsLieAlgebra, IsLieAlgebra ] );
+DeclareOperation( "AreIsomorphicNilpotentLieAlgebras", [ IsLieAlgebra, IsLieAlgebra ] );
 
-IsLieAlgebraWithNB := NewProperty( "IsLieAlgebraWithNB", 
-		                    IsLieNilpotentOverFp );
+DeclareProperty( "IsLieAlgebraWithNB", IsLieNilpotentOverFp );
 
-NilpotentBasis := NewAttribute( "NilpotentBasis", IsLieAlgebra, 
-				"mutable"  );
+DeclareAttribute( "NilpotentBasis", IsLieAlgebra, "mutable" );
     
-IsNilpotentBasis := NewProperty( "IsNilpotentBasis", IsBasis );
+DeclareProperty( "IsNilpotentBasis", IsBasis );
 
-LieNBDefinitions := NewAttribute( "LieNBDefinitions", IsNilpotentBasis );
+DeclareAttribute( "LieNBDefinitions", IsNilpotentBasis );
 
-LieNBWeights := NewAttribute( "LieNBWeights", IsNilpotentBasis );
+DeclareAttribute( "LieNBWeights", IsNilpotentBasis );
 
 
 
