@@ -41,7 +41,7 @@ InstallMethod(
 #W  Returns the abelian Lie algebra with dimension <d> over the
 ##  field <F>.
 
-AbelianLieAlgebra := function( F, d )
+BindGlobal("AbelianLieAlgebra", function( F, d )
     local L;
 
     L := LieAlgebraByStructureConstants( F, 
@@ -49,8 +49,4 @@ AbelianLieAlgebra := function( F, d )
     SetIsLieNilpotent( L, true );
 
     return L;
-end;
-
-
-
-
+end );
