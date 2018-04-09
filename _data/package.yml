@@ -1,34 +1,33 @@
 name: Sophus
-version: 1.23
-date: 2006-02-03
+version: 1.24
+date: 2017-04-09
 description: |
     Computing in nilpotent Lie algebras
 
 authors:
     - name: Csaba Schneider
-      url: http://www.sztaki.hu/~schneider
+      url: http://www.mat.ufmg.br/~csaba/
 
 maintainers:
-    - name: Csaba Schneider
-      url: http://www.sztaki.hu/~schneider
+    - name: The GAP Team
+      url: mailto:support@gap-system.org
 
-GAP: ">= 4.7"
+GAP: ">= 4.8"
 
 needed-pkgs:
     - name: "autpgrp"
       version: "1.2"
       url: "https://gap-packages.github.io/autpgrp/"
 
-www: http://www.sztaki.hu/~schneider/Research/Sophus/
+www: https://gap-packages.github.io/sophus/
 readme: README
-packageinfo: http://www.sztaki.hu/~schneider/Research/Sophus/PackageInfo.g
+packageinfo: https://gap-packages.github.io/sophus/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: http://www.sztaki.hu/~schneider/Research/Sophus/sophus1r23.tar.gz
+      url: https://github.com/gap-packages/sophus/releases/download/v1.24/sophus-1.24.tar.gz
 
 abstract: |
-    http://www.sztaki.hu/~schneider/Research/Sophus/
 
 status: accepted
 doc-html: doc/chap0.html

@@ -240,15 +240,3 @@
   to  a  string.  The  list so obtained is written into [3Xfile[103X. The name of this
   list will be [3Xname[103X.[133X
   
-  [1X3.7-4 SophusBuildManual[101X
-  
-  [33X[1;0Y[29X[2XSophusBuildManual[102X(  ) [32X function[133X
-  
-  [33X[0;0YBuilds Sophus manual.[133X
-  
-  [1X3.7-5 SophusBuildManualHTML[101X
-  
-  [33X[1;0Y[29X[2XSophusBuildManualHTML[102X(  ) [32X function[133X
-  
-  [33X[0;0YBuilds Sophus manual in html format.[133X
-  

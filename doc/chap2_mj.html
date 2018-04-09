@@ -35,77 +35,50 @@
 
 
 <div class="example"><pre>
-
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L1 := [ AbelianLieAlgebra( GF(2), 1 ) ];;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L2 := [ AbelianLieAlgebra( GF(2), 2 ) ];;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L3 := [ AbelianLieAlgebra( GF(2), 3 ) ];;</span>
-
 </pre></div>
 
 <p>Any 3-dimensional non-abelian nilpotent Lie algebra is an immediate descendant of a 2-dimensional Lie algebra. So we compute the step-1 descendants of <var class="Arg">L1[1]</var> and append them to <var class="Arg">L3</var>.</p>
 
 
 <div class="example"><pre>
-
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Append( L3, Descendants( L2[1], 1 ));</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L3;</span>
-[&lt;Lie algebra of dimension 3 over GF(2)&gt;, 
-&lt;Lie algebra of dimension 3 over GF(2)&gt; ]
-
+[ &lt;Lie algebra of dimension 3 over GF(2)&gt;, 
+  &lt;Lie algebra of dimension 3 over GF(2)&gt; ]
 </pre></div>
 
 <p>Now we compute the list of 4-dimensional Lie algebras. First we set <var class="Arg">L4</var> to contain the 4-dimensional abelian Lie algebra. Then we compute the step-1 descendants of the 3-dimensional algebras and append these descendants to <var class="Arg">L4</var>.</p>
 
 
 <div class="example"><pre>
-
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L4 := [ AbelianLieAlgebra( GF(2), 4 ) ];;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">for i in L3 do</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Append( L4, Descendants( i, 1 ));</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">od;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">for i in L3 do Append( L4, Descendants( i, 1 )); od;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L4;</span>
 [ &lt;Lie algebra of dimension 4 over GF(2)&gt;, 
-&lt;Lie algebra of dimension 4 over GF(2)&gt;, 
-&lt;Lie algebra of dimension 4 over GF(2)&gt; ]
-
+  &lt;Lie algebra of dimension 4 over GF(2)&gt;, 
+  &lt;Lie algebra of dimension 4 over GF(2)&gt; ]
 </pre></div>
 
 <p>We continue this way up to dimension~7.</p>
 
 
 <div class="example"><pre>
-
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L5 := [ AbelianLieAlgebra( GF(2), 5 ) ];;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">for i in L3 do</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Append( L5, Descendants( i, 2 ));</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">od;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">for i in L4 do</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Append( L5, Descendants( i, 1 ));</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">od;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">for i in L3 do Append( L5, Descendants( i, 2 )); od;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">for i in L4 do Append( L5, Descendants( i, 1 )); od;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L6 := [ AbelianLieAlgebra( GF(2), 6 ) ];;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">for i in L3 do</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Append( L6, Descendants( i, 3 ));</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">od;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">for i in L4 do</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Append( L6, Descendants( i, 2 ));</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">od;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">for i in L5 do</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Append( L6, Descendants( i, 1 ));</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">od;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">for i in L3 do Append( L6, Descendants( i, 3 )); od;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">for i in L4 do Append( L6, Descendants( i, 2 )); od;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">for i in L5 do Append( L6, Descendants( i, 1 )); od;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L7 := [ AbelianLieAlgebra( GF(2), 6 ) ];;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">for i in L4 do</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Append( L7, Descendants( i, 3 ));</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">od;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">for i in L5 do</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Append( L7, Descendants( i, 2 ));</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">od;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">for i in L6 do</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Append( L7, Descendants( i, 1 ));</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">od;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">for i in L4 do Append( L7, Descendants( i, 3 )); od;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">for i in L5 do Append( L7, Descendants( i, 2 )); od;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">for i in L6 do Append( L7, Descendants( i, 1 )); od;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Length( L7 );</span>
 202
-gap&gt;
-
 </pre></div>
 
 <p>This computation shows that there are 202 pairwise non-isomorphic nilpotent Lie algebras over <span class="SimpleMath">\(\mathbb F_2\)</span>.</p>
@@ -114,10 +87,8 @@ gap&gt;
 
 
 <div class="example"><pre>
-
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AutomorphismGroupOfNilpotentLieAlgebra( L7[100] );</span>
-rec( glAutos := [  ], 
-  agAutos := [ Aut: [ v.1, v.1+v.2, v.3, v.4, v.5, v.5+v.6, v.7 ], 
+rec( agAutos := [ Aut: [ v.1, v.1+v.2, v.3, v.4, v.5, v.5+v.6, v.7 ], 
       Aut: [ v.1, v.2+v.3, v.3, v.4, v.5, v.6, v.7 ], 
       Aut: [ v.1+v.3, v.2, v.3, v.4+v.5, v.5, v.6+v.7, v.7 ], 
       Aut: [ v.1+v.4, v.2, v.3+v.5, v.4+v.6, v.5+v.7, v.6+v.7, v.7 ], 
@@ -128,26 +99,23 @@ rec( glAutos := [  ],
       Aut: [ v.1, v.2+v.6, v.3, v.4+v.7, v.5, v.6, v.7 ], 
       Aut: [ v.1+v.7, v.2, v.3, v.4, v.5, v.6, v.7 ], 
       Aut: [ v.1, v.2+v.7, v.3, v.4, v.5, v.6, v.7 ], 
-      Aut: [ v.1, v.2, v.3+v.7, v.4, v.5, v.6, v.7 ] ], glOrder := 1, 
-  glOper := [  ], agOrder := [ 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 ], 
+      Aut: [ v.1, v.2, v.3+v.7, v.4, v.5, v.6, v.7 ] ], 
+  agOrder := [ 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 ], field := GF(2), 
+  glAutos := [  ], glOper := [  ], glOrder := 1, 
   liealg := &lt;Lie algebra of dimension 7 over GF(2)&gt;, 
-  one := Aut: [ v.1, v.2, v.3, v.4, v.5, v.6, v.7 ], size := 4096, 
-  field := GF(2), prime := 2 )
+  one := Aut: [ v.1, v.2, v.3, v.4, v.5, v.6, v.7 ], prime := 2, size := 4096 
+ )
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput"></span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AutomorphismGroup( L7[100] );                     </span>
 &lt;group with 12 generators&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput"></span>
-
 </pre></div>
 
 <p>Finally let us check that two Lie algebras from our list are not isomorphic.</p>
 
 
 <div class="example"><pre>
-
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AreIsomorphicNilpotentLieAlgebras( L7[100], L7[101] );</span>
 false
-
 </pre></div>
 
 

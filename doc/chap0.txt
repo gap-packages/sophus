@@ -1,54 +1,63 @@
   
   
-                                     [1X[5XSophus[105X[101X
+                                    [1X Sophus [101X
   
   
-                      [1XComputing in nilpotent Lie algebras[101X
+                     [1X Computing in nilpotent Lie algebras [101X
   
   
-                                  Version 1.23
+                                      1.24
   
   
-                                 February 2006
+                                  9 April 2017
   
   
                                 Csaba Schneider
   
+                                  The GAP Team
+  
   
   
   Csaba Schneider
-      Email:    [7Xmailto:csaba.schneider@sztaki.hu[107X
-      Homepage: [7Xhttp://www.sztaki.hu/~schneider[107X
-      Address:  [33X[0;14YInformatics Laboratory[133X
-                [33X[0;14YComputer and Automation Research Institute[133X
-                [33X[0;14YThe Hungarian Academy of Sciences[133X
-                [33X[0;14Y1111 Budapest, L\'agym\'anyosi u.\ 11.[133X
-                [33X[0;14YHungary[133X
+      Email:    [7Xmailto:csaba@mat.ufmg.br[107X
+      Homepage: [7Xhttp://www.mat.ufmg.br/~csaba/[107X
+      Address:  [33X[0;14YDepartamento de Matemática[133X
+                [33X[0;14YInstituto de Ciências Exatas[133X
+                [33X[0;14YUniversidade Federal de Minas Gerais (UFMG)[133X
+                [33X[0;14YBelo Horizonte, Brasil[133X
   
   
+  The GAP Team
+      Email:    [7Xmailto:support@gap-system.org[107X
   
   -------------------------------------------------------
   [1XAbstract[101X
-  [33X[0;0Y[5XSophus[105X is a GAP~4 package to compute with nilpotent Lie algebras over finite
+  [33X[0;0Y[5XSophus[105X  is a GAP4 package to compute with nilpotent Lie algebras over finite
   prime  fields.  In  particular,  the  package can be used to compute certain
   central  extensions  and the automorphism group of such Lie algebras. [5XSophus[105X
   also  enables  its  user  to  test  isomorphism  between  two  nilpotent Lie
   algebras. The author of the package used it to construct all Lie algebras of
-  dimension at most~9 over [23X\mathbb F_2[123X[133X
+  dimension at most 9 over [23X\mathbb F_2[123X.[133X
   
   
   -------------------------------------------------------
   [1XCopyright[101X
   [33X[0;0Y© 2004, 2005 Csaba Schneider[133X
   
+  [33X[0;0YThe  [5XSophus[105X  package is free software; you can redistribute it and/or modify
+  it    under    the    terms    of    the    GNU   General   Public   License
+  ([7Xhttp://www.fsf.org/licenses/gpl.html[107X)  as  published  by  the Free Software
+  Foundation;  either  version 2 of the License, or (at your option) any later
+  version.[133X
+  
   
   -------------------------------------------------------
   [1XAcknowledgements[101X
   [33X[0;0YMost  of  the  work  on this package was carried out while I held a research
-  position  at  the  Technische  Universtit\"at  Braunschweig. I would like to
-  express  my  gratitude  to  the staff and the students of the Institut f\"ur
-  Geometrie for their interest in this work. Special thanks go to Bettina Eick
-  for her r\^ole in completing this project.[133X
+  position at the Technische Universität Braunschweig. I would like to express
+  my gratitude to the staff and the students of the Institut für Geometrie for
+  their  interest in this work. Special thanks go to Bettina Eick for her rôle
+  in completing this project.[133X
   
   
   -------------------------------------------------------
@@ -92,8 +101,6 @@
       3.7-1 WriteLieAlgebraToString
       3.7-2 ReadStringToNilpotentLieAlgebra
       3.7-3 WriteLieAlgebraListToFile
-      3.7-4 SophusBuildManual
-      3.7-5 SophusBuildManualHTML
   
   
   [32X

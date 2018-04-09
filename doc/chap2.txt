@@ -10,11 +10,9 @@
   3.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X[128X[104X
     [4X[25Xgap>[125X [27XL1 := [ AbelianLieAlgebra( GF(2), 1 ) ];;[127X[104X
     [4X[25Xgap>[125X [27XL2 := [ AbelianLieAlgebra( GF(2), 2 ) ];;[127X[104X
     [4X[25Xgap>[125X [27XL3 := [ AbelianLieAlgebra( GF(2), 3 ) ];;[127X[104X
-    [4X[28X[128X[104X
   [4X[32X[104X
   
   [33X[0;0YAny   3-dimensional  non-abelian  nilpotent  Lie  algebra  is  an  immediate
@@ -22,12 +20,10 @@
   descendants of [3XL1[1][103X and append them to [3XL3[103X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X[128X[104X
     [4X[25Xgap>[125X [27XAppend( L3, Descendants( L2[1], 1 ));[127X[104X
     [4X[25Xgap>[125X [27XL3;[127X[104X
-    [4X[28X[<Lie algebra of dimension 3 over GF(2)>, [128X[104X
-    [4X[28X<Lie algebra of dimension 3 over GF(2)> ][128X[104X
-    [4X[28X[128X[104X
+    [4X[28X[ <Lie algebra of dimension 3 over GF(2)>, [128X[104X
+    [4X[28X  <Lie algebra of dimension 3 over GF(2)> ][128X[104X
   [4X[32X[104X
   
   [33X[0;0YNow  we  compute  the list of 4-dimensional Lie algebras. First we set [3XL4[103X to
@@ -36,53 +32,30 @@
   [3XL4[103X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X[128X[104X
     [4X[25Xgap>[125X [27XL4 := [ AbelianLieAlgebra( GF(2), 4 ) ];;[127X[104X
-    [4X[25Xgap>[125X [27Xfor i in L3 do[127X[104X
-    [4X[25Xgap>[125X [27XAppend( L4, Descendants( i, 1 ));[127X[104X
-    [4X[25Xgap>[125X [27Xod;[127X[104X
+    [4X[25Xgap>[125X [27Xfor i in L3 do Append( L4, Descendants( i, 1 )); od;[127X[104X
     [4X[25Xgap>[125X [27XL4;[127X[104X
     [4X[28X[ <Lie algebra of dimension 4 over GF(2)>, [128X[104X
-    [4X[28X<Lie algebra of dimension 4 over GF(2)>, [128X[104X
-    [4X[28X<Lie algebra of dimension 4 over GF(2)> ][128X[104X
-    [4X[28X[128X[104X
+    [4X[28X  <Lie algebra of dimension 4 over GF(2)>, [128X[104X
+    [4X[28X  <Lie algebra of dimension 4 over GF(2)> ][128X[104X
   [4X[32X[104X
   
   [33X[0;0YWe continue this way up to dimension~7.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X[128X[104X
     [4X[25Xgap>[125X [27XL5 := [ AbelianLieAlgebra( GF(2), 5 ) ];;[127X[104X
-    [4X[25Xgap>[125X [27Xfor i in L3 do[127X[104X
-    [4X[25Xgap>[125X [27XAppend( L5, Descendants( i, 2 ));[127X[104X
-    [4X[25Xgap>[125X [27Xod;[127X[104X
-    [4X[25Xgap>[125X [27Xfor i in L4 do[127X[104X
-    [4X[25Xgap>[125X [27XAppend( L5, Descendants( i, 1 ));[127X[104X
-    [4X[25Xgap>[125X [27Xod;[127X[104X
+    [4X[25Xgap>[125X [27Xfor i in L3 do Append( L5, Descendants( i, 2 )); od;[127X[104X
+    [4X[25Xgap>[125X [27Xfor i in L4 do Append( L5, Descendants( i, 1 )); od;[127X[104X
     [4X[25Xgap>[125X [27XL6 := [ AbelianLieAlgebra( GF(2), 6 ) ];;[127X[104X
-    [4X[25Xgap>[125X [27Xfor i in L3 do[127X[104X
-    [4X[25Xgap>[125X [27XAppend( L6, Descendants( i, 3 ));[127X[104X
-    [4X[25Xgap>[125X [27Xod;[127X[104X
-    [4X[25Xgap>[125X [27Xfor i in L4 do[127X[104X
-    [4X[25Xgap>[125X [27XAppend( L6, Descendants( i, 2 ));[127X[104X
-    [4X[25Xgap>[125X [27Xod;[127X[104X
-    [4X[25Xgap>[125X [27Xfor i in L5 do[127X[104X
-    [4X[25Xgap>[125X [27XAppend( L6, Descendants( i, 1 ));[127X[104X
-    [4X[25Xgap>[125X [27Xod;[127X[104X
+    [4X[25Xgap>[125X [27Xfor i in L3 do Append( L6, Descendants( i, 3 )); od;[127X[104X
+    [4X[25Xgap>[125X [27Xfor i in L4 do Append( L6, Descendants( i, 2 )); od;[127X[104X
+    [4X[25Xgap>[125X [27Xfor i in L5 do Append( L6, Descendants( i, 1 )); od;[127X[104X
     [4X[25Xgap>[125X [27XL7 := [ AbelianLieAlgebra( GF(2), 6 ) ];;[127X[104X
-    [4X[25Xgap>[125X [27Xfor i in L4 do[127X[104X
-    [4X[25Xgap>[125X [27XAppend( L7, Descendants( i, 3 ));[127X[104X
-    [4X[25Xgap>[125X [27Xod;[127X[104X
-    [4X[25Xgap>[125X [27Xfor i in L5 do[127X[104X
-    [4X[25Xgap>[125X [27XAppend( L7, Descendants( i, 2 ));[127X[104X
-    [4X[25Xgap>[125X [27Xod;[127X[104X
-    [4X[25Xgap>[125X [27Xfor i in L6 do[127X[104X
-    [4X[25Xgap>[125X [27XAppend( L7, Descendants( i, 1 ));[127X[104X
-    [4X[25Xgap>[125X [27Xod;[127X[104X
+    [4X[25Xgap>[125X [27Xfor i in L4 do Append( L7, Descendants( i, 3 )); od;[127X[104X
+    [4X[25Xgap>[125X [27Xfor i in L5 do Append( L7, Descendants( i, 2 )); od;[127X[104X
+    [4X[25Xgap>[125X [27Xfor i in L6 do Append( L7, Descendants( i, 1 )); od;[127X[104X
     [4X[25Xgap>[125X [27XLength( L7 );[127X[104X
     [4X[28X202[128X[104X
-    [4X[28Xgap>[128X[104X
-    [4X[28X[128X[104X
   [4X[32X[104X
   
   [33X[0;0YThis  computation shows that there are 202 pairwise non-isomorphic nilpotent
@@ -93,10 +66,8 @@
   [5XSophus[105X, then we compute this group as a standard [5XGAP[105X object.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X[128X[104X
     [4X[25Xgap>[125X [27XAutomorphismGroupOfNilpotentLieAlgebra( L7[100] );[127X[104X
-    [4X[28Xrec( glAutos := [  ], [128X[104X
-    [4X[28X  agAutos := [ Aut: [ v.1, v.1+v.2, v.3, v.4, v.5, v.5+v.6, v.7 ], [128X[104X
+    [4X[28Xrec( agAutos := [ Aut: [ v.1, v.1+v.2, v.3, v.4, v.5, v.5+v.6, v.7 ], [128X[104X
     [4X[28X      Aut: [ v.1, v.2+v.3, v.3, v.4, v.5, v.6, v.7 ], [128X[104X
     [4X[28X      Aut: [ v.1+v.3, v.2, v.3, v.4+v.5, v.5, v.6+v.7, v.7 ], [128X[104X
     [4X[28X      Aut: [ v.1+v.4, v.2, v.3+v.5, v.4+v.6, v.5+v.7, v.6+v.7, v.7 ], [128X[104X
@@ -107,24 +78,21 @@
     [4X[28X      Aut: [ v.1, v.2+v.6, v.3, v.4+v.7, v.5, v.6, v.7 ], [128X[104X
     [4X[28X      Aut: [ v.1+v.7, v.2, v.3, v.4, v.5, v.6, v.7 ], [128X[104X
     [4X[28X      Aut: [ v.1, v.2+v.7, v.3, v.4, v.5, v.6, v.7 ], [128X[104X
-    [4X[28X      Aut: [ v.1, v.2, v.3+v.7, v.4, v.5, v.6, v.7 ] ], glOrder := 1, [128X[104X
-    [4X[28X  glOper := [  ], agOrder := [ 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 ], [128X[104X
+    [4X[28X      Aut: [ v.1, v.2, v.3+v.7, v.4, v.5, v.6, v.7 ] ], [128X[104X
+    [4X[28X  agOrder := [ 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 ], field := GF(2), [128X[104X
+    [4X[28X  glAutos := [  ], glOper := [  ], glOrder := 1, [128X[104X
     [4X[28X  liealg := <Lie algebra of dimension 7 over GF(2)>, [128X[104X
-    [4X[28X  one := Aut: [ v.1, v.2, v.3, v.4, v.5, v.6, v.7 ], size := 4096, [128X[104X
-    [4X[28X  field := GF(2), prime := 2 )[128X[104X
+    [4X[28X  one := Aut: [ v.1, v.2, v.3, v.4, v.5, v.6, v.7 ], prime := 2, size := 4096 [128X[104X
+    [4X[28X )[128X[104X
     [4X[25Xgap>[125X [27X[127X[104X
     [4X[25Xgap>[125X [27XAutomorphismGroup( L7[100] );                     [127X[104X
     [4X[28X<group with 12 generators>[128X[104X
-    [4X[25Xgap>[125X [27X[127X[104X
-    [4X[28X[128X[104X
   [4X[32X[104X
   
   [33X[0;0YFinally let us check that two Lie algebras from our list are not isomorphic.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X[128X[104X
     [4X[25Xgap>[125X [27XAreIsomorphicNilpotentLieAlgebras( L7[100], L7[101] );[127X[104X
     [4X[28Xfalse[128X[104X
-    [4X[28X[128X[104X
   [4X[32X[104X
   
