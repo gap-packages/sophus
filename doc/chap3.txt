@@ -1,0 +1,254 @@
+  
+  [1X3 [33X[0;0Y[5XSophus[105X[101X[1X functions[133X[101X
+  
+  
+  [1X3.1 [33X[0;0YSome general functions to compute with Lie algebras[133X[101X
+  
+  [1X3.1-1 SophusTest[101X
+  
+  [33X[1;0Y[29X[2XSophusTest[102X(  ) [32X function[133X
+  
+  [33X[0;0YTests  [5XSophus[105X  functions,  returns true if it finds no mistakes, and returns
+  false otherwise. May take a couple of minutes to complete.[133X
+  
+  [1X3.1-2 IsLieNilpotentOverFp[101X
+  
+  [33X[1;0Y[29X[2XIsLieNilpotentOverFp[102X( [3XL[103X ) [32X property[133X
+  
+  [33X[0;0YReturns  true  if [3XL[103X is a nilpotent Lie algebra and its underlying field is a
+  finite prime field.[133X
+  
+  [1X3.1-3 MinimalGeneratorNumber[101X
+  
+  [33X[1;0Y[29X[2XMinimalGeneratorNumber[102X( [3XL[103X ) [32X attribute[133X
+  
+  [33X[0;0YComputes  the  minimal number of generators for [23XL[123X, which is the dimension of
+  [23XL/L'[123X.[133X
+  
+  [1X3.1-4 AbelianLieAlgebra[101X
+  
+  [33X[1;0Y[29X[2XAbelianLieAlgebra[102X( [3XF[103X, [3Xd[103X ) [32X function[133X
+  
+  [33X[0;0YReturns the Abelian Lie algebra with dimension [23Xd[123X over the field [3XF[103X.[133X
+  
+  
+  [1X3.2 [33X[0;0YFunctions to compute with nilpotent bases[133X[101X
+  
+  [1X3.2-1 NilpotentBasis[101X
+  
+  [33X[1;0Y[29X[2XNilpotentBasis[102X( [3XL[103X ) [32X attribute[133X
+  
+  [33X[0;0YComputes a nilpotent basis for [23XL[123X. Nilpotent bases are defined in Section [14X1[114X.[133X
+  
+  [1X3.2-2 LieNBWeights[101X
+  
+  [33X[1;0Y[29X[2XLieNBWeights[102X( [3XB[103X ) [32X attribute[133X
+  
+  [33X[0;0YEvery  element  of  the  nilpotent basis [23XB[123X has a weight; See Section [14X1[114X. This
+  function returns the list of these weights.[133X
+  
+  [1X3.2-3 LieNBDefinitions[101X
+  
+  [33X[1;0Y[29X[2XLieNBDefinitions[102X( [3XB[103X ) [32X attribute[133X
+  
+  [33X[0;0YThis function returns a list. The [3Xi[103X-th element of this list is 0 if [3XB[i][103X has
+  weight  1.  Otherwise the [3Xi[103X-th element is [3X[k,l][103X if the definition of [3XB[i][103X is
+  [3X[B[k],B[l]][103X. See Section [14X1[114X.[133X
+  
+  [1X3.2-4 IsNilpotentBasis[101X
+  
+  [33X[1;0Y[29X[2XIsNilpotentBasis[102X( [3XB[103X ) [32X property[133X
+  
+  [33X[0;0YReturns  [9Xtrue[109X if the basis [3XB[103X of a Lie algebra was computed with the function
+  [10XNilpotentBasis[110X; [9Xfalse[109X otherwise.[133X
+  
+  [1X3.2-5 IsLieAlgebraWithNB[101X
+  
+  [33X[1;0Y[29X[2XIsLieAlgebraWithNB[102X( [3XL[103X ) [32X property[133X
+  
+  [33X[0;0YReturns  [9Xtrue[109X if a nilpotent basis for [3XL[103X has already been computed using the
+  function [10XNilpotentBasis[110X; [9Xfalse[109X otherwise.[133X
+  
+  
+  [1X3.3 [33X[0;0YThe cover[133X[101X
+  
+  [1X3.3-1 LieCover[101X
+  
+  [33X[1;0Y[29X[2XLieCover[102X( [3XL[103X ) [32X attribute[133X
+  
+  [33X[0;0YComputes the cover for the nilpotent Lie algebra [23XL[123X as defined in Section [14X1[114X.[133X
+  
+  [1X3.3-2 CoverHomomorphism[101X
+  
+  [33X[1;0Y[29X[2XCoverHomomorphism[102X( [3XC[103X ) [32X attribute[133X
+  
+  [33X[0;0YThe  nilpotent  Lie  algebra  [3XC[103X  was obtained from a nilpotent Lie algebra [3XL[103X
+  using  the  [3XLieCover(  L  )[103X function call. This function returns the natural
+  homomorphism from [3XC[103X onto [3XL[103X.[133X
+  
+  [1X3.3-3 CoverOf[101X
+  
+  [33X[1;0Y[29X[2XCoverOf[102X( [3XC[103X ) [32X attribute[133X
+  
+  [33X[0;0YThe  nilpotent  Lie  algebra  [3XC[103X  was obtained from a nilpotent Lie algebra [3XL[103X
+  using the [3XLieCover( L )[103X function call. This function returns [3XL[103X.[133X
+  
+  [1X3.3-4 IsLieCover[101X
+  
+  [33X[1;0Y[29X[2XIsLieCover[102X( [3XC[103X ) [32X property[133X
+  
+  [33X[0;0YReturns  [9Xtrue[109X  if the Lie algebra [3XC[103X was obtained as the Lie cover of another
+  Lie algebra [3XL[103X using the [3XLieCover( L )[103X function call.[133X
+  
+  [1X3.3-5 LieMultiplicator[101X
+  
+  [33X[1;0Y[29X[2XLieMultiplicator[102X( [3XC[103X ) [32X attribute[133X
+  
+  [33X[0;0YThe  nilpotent  Lie  algebra  [3XC[103X  was obtained from a nilpotent Lie algebra [3XL[103X
+  using  the  [3XLieCover(  L  )[103X function call. This function returns the central
+  ideal of [3XC[103X which is the multiplicator of [3XL[103X; see Section [14X1[114X.[133X
+  
+  [1X3.3-6 LieNucleus[101X
+  
+  [33X[1;0Y[29X[2XLieNucleus[102X( [3XC[103X ) [32X attribute[133X
+  
+  [33X[0;0YThe  nilpotent  Lie  algebra  [3XC[103X  was obtained from a nilpotent Lie algebra [3XL[103X
+  using  the  [3XLieCover(  L  )[103X function call. This function returns the central
+  ideal of [3XC[103X which is the nucleus of [3XL[103X; see Section [14X1[114X.[133X
+  
+  
+  [1X3.4 [33X[0;0YAutomorphisms of nilpotent Lie algebras[133X[101X
+  
+  [33X[0;0YWe define a special class of automorphisms for our work.[133X
+  
+  [1X3.4-1 NilpotentLieAutomorphism[101X
+  
+  [33X[1;0Y[29X[2XNilpotentLieAutomorphism[102X( [3XL[103X, [3Xgens[103X, [3Ximgs[103X ) [32X method[133X
+  
+  [33X[0;0Y[3XL[103X is a nilpotent Lie algebra, [3Xgens[103X is a generating set, and [3Ximgs[103X is a subset
+  of  [3XL[103X with the same length as [3Xgens[103X. Returns the automorphism of [3XL[103X which maps
+  the element of [3Xgens[103X to the elements of [3Ximgs[103X. It is the responsibility of the
+  user  to  make  sure  that  the arguments are given so that the automorphism
+  exists.  These  automorphisms  can be compared, multiplied using the [3X*[103X sign,
+  and  the  inverse  of such an automorphism can also be computed in the usual
+  manner.[133X
+  
+  [1X3.4-2 IdentityNilpotentLieAutomorphism[101X
+  
+  [33X[1;0Y[29X[2XIdentityNilpotentLieAutomorphism[102X( [3XL[103X ) [32X method[133X
+  
+  [33X[0;0Y[3XL[103X is a nilpotent Lie algebra; returns the identity automorphism of [23XL[123X.[133X
+  
+  [1X3.4-3 IsNilpotentLieAutomorphism[101X
+  
+  [33X[1;0Y[29X[2XIsNilpotentLieAutomorphism[102X( [3XA[103X ) [32X property[133X
+  
+  [33X[0;0YReturns  [9Xtrue[109X  if  [3XA[103X  was  obtained  using  a [3XNilpotentLieAutomorphism[103X or an
+  [3XIdentityNilpotentLieAutomorphism[103X function call.[133X
+  
+  
+  [1X3.5 [33X[0;0YAutomorphism group and isomorphism testing[133X[101X
+  
+  [1X3.5-1 AutomorphismGroup[101X
+  
+  [33X[1;0Y[29X[2XAutomorphismGroup[102X( [3XL[103X ) [32X method[133X
+  
+  [33X[0;0Y[3XL[103X is a nilpotent Lie algebra; returns the automorphism group of [3XL[103X as a group
+  generated  by  [5XGAP[105X algebra automorphisms. The automorphism group is computed
+  as explained in [Sch].[133X
+  
+  [1X3.5-2 AutomorphismGroupNilpotentLieAlgebra[101X
+  
+  [33X[1;0Y[29X[2XAutomorphismGroupNilpotentLieAlgebra[102X( [3XL[103X ) [32X method[133X
+  
+  [33X[0;0Y[3XL[103X  is  a  nilpotent  Lie algebra; returns the automorphism group of [3XL[103X in the
+  internally  used  hybrid  format.  The  automorphism  group  is  computed as
+  explained in [Sch]. The hybrid format, which is very similar to the one used
+  in [EO], is a record that contains the following fields.[133X
+  
+  [30X    [33X[0;6Y[10XglAutos[110X:  a  set of automorphisms which together with [10XagAutos[110X generate
+        the automorphism group;[133X
+  
+  [30X    [33X[0;6Y[10XglOrder[110X:  an  integer  whose product with the numbers in [10XagOrder[110X gives
+        the size of the automorphism group;[133X
+  
+  [30X    [33X[0;6Y[10XagAutos[110X:  a  polycyclic  generating  sequence  for  a  soluble  normal
+        subgroup of the automorphism group;[133X
+  
+  [30X    [33X[0;6Y[10XagOrder[110X: the relative orders corresponding to [10XagAutos[110X;[133X
+  
+  [30X    [33X[0;6Y[10Xliealg[110X: The Lie algebra acted upon by the automorphisms.[133X
+  
+  [30X    [33X[0;6Y[10Xsize[110X: the size of the automorphism group.[133X
+  
+  [30X    [33X[0;6Y[10Xfield[110X: the underlying field of the Lie algebra.[133X
+  
+  [30X    [33X[0;6Y[10Xprime[110X: the characteristic of the underlying field.[133X
+  
+  [33X[0;0YWe  do not return an automorphism group in the standard form because we wish
+  to  distinguish between [10XagAutos[110X and [10XglAutos[110X; the latter act non-trivially on
+  the derived quotient of [22XL[122X. This hybrid-group description of the automorphism
+  group permits more efficient computations with it.[133X
+  
+  [1X3.5-3 AreIsomorphicNilpotentLieAlgebras[101X
+  
+  [33X[1;0Y[29X[2XAreIsomorphicNilpotentLieAlgebras[102X( [3XL[103X, [3XK[103X ) [32X method[133X
+  
+  [33X[0;0YReturns [9Xtrue[109X if [3XL[103X and [3XK[103X are isomorphic; [9Xfalse[109X otherwise.[133X
+  
+  
+  [1X3.6 [33X[0;0YDescendants[133X[101X
+  
+  [1X3.6-1 Descendants[101X
+  
+  [33X[1;0Y[29X[2XDescendants[102X( [3XL[103X, [3Xstep[103X ) [32X method[133X
+  
+  [33X[0;0YReturns the [9Xstep[109X-step descendants of a nilpotent Lie algebra [3XL[103X.[133X
+  
+  [1X3.6-2 DescendantsOfStep1OfAbelianLieAlgebra[101X
+  
+  [33X[1;0Y[29X[2XDescendantsOfStep1OfAbelianLieAlgebra[102X( [3XL[103X, [3Xstep[103X ) [32X method[133X
+  
+  [33X[0;0YReturns  the  [9X1[109X-step descendants of the abelian Lie algebra with dimension [3Xd[103X
+  defined over the field of [3Xp[103X elements.[133X
+  
+  
+  [1X3.7 [33X[0;0YInput and output[133X[101X
+  
+  [33X[0;0YThe  package  provides  with a number of functions that can be used to store
+  lists  of  Lie  algebras. Here we document only the most important ones, see
+  the source code [10Xio.gi[110X for the rest.[133X
+  
+  [1X3.7-1 WriteLieAlgebraToString[101X
+  
+  [33X[1;0Y[29X[2XWriteLieAlgebraToString[102X( [3XL[103X ) [32X function[133X
+  
+  [33X[0;0YReturns a string that encodes the nilpotent Lie algebra [3XL[103X[133X
+  
+  [1X3.7-2 ReadStringToNilpotentLieAlgebra[101X
+  
+  [33X[1;0Y[29X[2XReadStringToNilpotentLieAlgebra[102X( [3Xstring[103X, [3Xp[103X, [3Xd[103X ) [32X function[133X
+  
+  [33X[0;0YDecodes  [3Xstring[103X  into a [3Xd[103X-dimensional nilpotent Lie algebra defined over the
+  field of [3Xp[103X elements.[133X
+  
+  [1X3.7-3 WriteLieAlgebraListToFile[101X
+  
+  [33X[1;0Y[29X[2XWriteLieAlgebraListToFile[102X( [3Xlist[103X, [3Xname[103X, [3Xfile[103X ) [32X function[133X
+  
+  [33X[0;0Y[3Xlist[103X  is  a list of nilpotent Lie algebras. Encodes each Lie algebra in [3Xlist[103X
+  to  a  string.  The  list so obtained is written into [3Xfile[103X. The name of this
+  list will be [3Xname[103X.[133X
+  
+  [1X3.7-4 SophusBuildManual[101X
+  
+  [33X[1;0Y[29X[2XSophusBuildManual[102X(  ) [32X function[133X
+  
+  [33X[0;0YBuilds Sophus manual.[133X
+  
+  [1X3.7-5 SophusBuildManualHTML[101X
+  
+  [33X[1;0Y[29X[2XSophusBuildManualHTML[102X(  ) [32X function[133X
+  
+  [33X[0;0YBuilds Sophus manual in html format.[133X
+  

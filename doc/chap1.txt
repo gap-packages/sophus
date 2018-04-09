@@ -1,0 +1,96 @@
+  
+  [1X1 [33X[0;0YThe theory[133X[101X
+  
+  [33X[0;0YThe  [5XSophus[105X  package  was  originally designed to aid the author to classify
+  some  small-dimensional  nilpotent  Lie  algebras  over  small  fields.  The
+  classification  follows  the ideas that were used to classify small [23Xp[123X-groups
+  by  O'Brien [O'B90]. The theory developed by O'Brien could easily be adopted
+  to  Lie  algebras, and the details of this new theory can be found in [Sch].
+  Here  we  only summarise the main ideas, so that the user can understand the
+  procedures implemented in this package. In this section [23XL[123X denotes a finitely
+  generated, and hence finite-dimensional, nilpotent Lie algebra. Suppose that
+  [23XL[123X has nilpotency class [23Xc[123X, and hence the lower central series is as follows:[133X
+  
+  
+  [24X[33X[0;6YL=                             \gamma_1(L)>\gamma_2(L)=L'>\gamma_3(L)>\cdots
+  >\gamma_c(L)>\gamma_{c+1}(L)=0.[133X
+  
+  [124X
+  
+  [33X[0;0YWe  say  that a basis [23X\mathcal B=\{b_1,\ldots,b_n\}[123X for [23XL[123X is [13Xcompatible with
+  the  lower central series[113X if there are indices [23X1=i_1<i_2<\cdots<i_{c}<n[123X such
+  that    [23X\{b_{i_k},\ldots,b_n\}[123X    is    a    basis    of   [23X\gamma_k(L)[123X   for
+  [23Xk\in\{1,\ldots,c\}[123X. We compute the structure constants table with respect to
+  this  basis,  that  is,  we  compute  coefficients  [23X\alpha_{i,j}^k[123X for [23X1\leq
+  i<j<k\leq n[123X such that[133X
+  
+  
+  [24X[33X[0;6Y[b_i,b_j]=\sum_{k=j+1}^n\alpha_{i,j}^k b_k.[133X
+  
+  [124X
+  
+  [33X[0;0YSuppose that [23Xb_i\in\gamma_j(L)\setminus\gamma_{j+1}(L)[123X. Then we say that the
+  number [23Xj[123X is the [13Xweight[113X of the basis element [23Xb_i[123X.[133X
+  
+  [33X[0;0YNote  that  in  the nilpotent Lie algebra [23XL[123X minimal generating sets have the
+  same  size,  namely  the  dimension of [23XL/L'[123X. If [23X\dim L/L'=d[123X then we call [23XL[123X a
+  [23Xd[123X[13X-generator  algebra[113X.  We  call  a basis [23X\mathcal B[123X a [13Xnilpotent basis[113X if the
+  following hold.[133X
+  
+  [30X    [33X[0;6YThe basis [23X\mathcal B[123X is compatible with the lower central series.[133X
+  
+  [30X    [33X[0;6YFor  each  [23Xb_i\in  \mathcal  B[123X with weight [23Xw\geq 2[123X there are [23Xb_{j_1},\
+        b_{j_2}\in\mathcal  B[123X  with  weight  1 and [23Xw-1[123X, respectively such that
+        [23Xb_i=[b_{j_1},b_{j_2}][123X.  The  product  [23X[b_{j_1},b_{j_2}][123X  is called the
+        definition of [23Xb_i[123X.[133X
+  
+  [33X[0;0YA  Lie  algebra  [23XK[123X  is said to be a [13Xcentral extension[113X of [23XL[123X if [23XL\cong K/I[123X for
+  some  ideal  [23XI[123X  such  that  [23XI\leq  Z(K)\cap  K'[123X.  Suppose that [23Xc[123X denotes the
+  nilpotency  class of [23XL[123X. Then a Lie algebra [23XK[123X is an [13Ximmediate descendant[113X of [23XL[123X
+  if   [23XK[123X  has  class  [23Xc+1[123X  and  [23XK/\gamma_{c+1}(K)\cong  L[123X.  As  in  this  case
+  [23X\gamma_{c+1}(K)\leq  Z(K)\cap  K'[123X, it follows that an immediate descendant [23XK[123X
+  is  a central extension of [23XL[123X. If [23Xs=\dim \gamma_{c+1}(K)[123X then [23XK[123X is said to be
+  a [13Xstep-[23Xs[123X[113X immediate descendant of [23XL[123X.[133X
+  
+  [33X[0;0YLet  [23XL[123X  be  a [23Xd[123X-generator nilpotent Lie algebra with class [23Xc[123X, and let [23XF[123X be a
+  free  Lie  algebra  of  rank [23Xd[123X. Choose an ideal [23XI[123X of [23XF[123X such that [23XL\cong F/I[123X.
+  Then  the  Lie  algebra  [23XL^*=F/[I,F][123X  is  called the [13XLie cover[113X of [23XL[123X. The [13XLie
+  multiplicator[113X  in  [23XL^*[123X  is  the  subspace  [23XI/[I,F][123X  and  the  [13XLie nucleus[113X is
+  [23X\gamma_c(L^*)[123X.  It  clear  from  the  definition  that  [23XL^*/M\cong  L[123X. It is
+  verified  in  [Sch]  that,  up  to  isomorphism,  the  Lie  cover,  the  Lie
+  multiplicator  and the Lie nucleus are determined by the isomorphism type of
+  [23XL[123X.  Further,  each  central  extension  of  the nilpotent Lie algebra [23XL[123X is a
+  quotient  of  the  Lie  cover  [23XL^*[123X.  Thus  it is possible to obtain all such
+  descendants by first computing the Lie cover; this procedure is explained in
+  [Sch].  Similar  ideas  can  be  used to compute the automorphism group of a
+  nilpotent  Lie  algebra, and to verify isomorphism between two nilpotent Lie
+  algebras; see [Sch] for details.[133X
+  
+  [33X[0;0YThe main functions in [5XSophus[105X are thus able to compute[133X
+  
+  [30X    [33X[0;6Ya nilpotent basis for a nilpotent Lie algebra;[133X
+  
+  [30X    [33X[0;6Ythe cover of a nilpotent Lie algebra;[133X
+  
+  [30X    [33X[0;6Ythe immediate descendants of a nilpotent Lie algebra;[133X
+  
+  [30X    [33X[0;6Ythe full automorphism group of a nilpotent Lie algebra.[133X
+  
+  [33X[0;0YThere  is  also  a  function  in  the  package to check if two nilpotent Lie
+  algebras  are  isomorphic.  After  repeated  applications  of  the immediate
+  descendants  algorithm, it is, in theory, possible to list all nilpotent Lie
+  algebras  of  a  given  dimension over a prime field [23X\mathbb F_p[123X. Of course,
+  this  computation  requires  relatively  large  computational resources, and
+  quickly becomes unfeasible as the dimension or the characteristic [23Xp[123X grows.[133X
+  
+  [33X[0;0YThe  [5XSophus[105X  package  was  written for the GAP~4 computer algebra system. In
+  many procedures it is very important that we can compute the stabiliser of a
+  subspace  under  some  matrix  group  action.  This is carried out using the
+  procedures  implemented  in  the [3Xautpgrp[103X package [EO]. Hence this package is
+  required to run [5XSophus[105X.[133X
+  
+  [33X[0;0YThe current version of [5XSophus[105X deals with general nilpotent Lie algebras over
+  finite  prime  fields. If you are to compute with Lie algebras obtained from
+  group  algebras  via  the bracket operation, then another GAP package LAGUNA
+  [RS] may also offer some very efficient methods.[133X
+  

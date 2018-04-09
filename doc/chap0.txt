@@ -1,1 +1,99 @@
-Placeholder
+  
+  
+                                     [1X[5XSophus[105X[101X
+  
+  
+                      [1XComputing in nilpotent Lie algebras[101X
+  
+  
+                                  Version 1.23
+  
+  
+                                 February 2006
+  
+  
+                                Csaba Schneider
+  
+  
+  
+  Csaba Schneider
+      Email:    [7Xmailto:csaba.schneider@sztaki.hu[107X
+      Homepage: [7Xhttp://www.sztaki.hu/~schneider[107X
+      Address:  [33X[0;14YInformatics Laboratory[133X
+                [33X[0;14YComputer and Automation Research Institute[133X
+                [33X[0;14YThe Hungarian Academy of Sciences[133X
+                [33X[0;14Y1111 Budapest, L\'agym\'anyosi u.\ 11.[133X
+                [33X[0;14YHungary[133X
+  
+  
+  
+  -------------------------------------------------------
+  [1XAbstract[101X
+  [33X[0;0Y[5XSophus[105X is a GAP~4 package to compute with nilpotent Lie algebras over finite
+  prime  fields.  In  particular,  the  package can be used to compute certain
+  central  extensions  and the automorphism group of such Lie algebras. [5XSophus[105X
+  also  enables  its  user  to  test  isomorphism  between  two  nilpotent Lie
+  algebras. The author of the package used it to construct all Lie algebras of
+  dimension at most~9 over [23X\mathbb F_2[123X[133X
+  
+  
+  -------------------------------------------------------
+  [1XCopyright[101X
+  [33X[0;0Y© 2004, 2005 Csaba Schneider[133X
+  
+  
+  -------------------------------------------------------
+  [1XAcknowledgements[101X
+  [33X[0;0YMost  of  the  work  on this package was carried out while I held a research
+  position  at  the  Technische  Universtit\"at  Braunschweig. I would like to
+  express  my  gratitude  to  the staff and the students of the Institut f\"ur
+  Geometrie for their interest in this work. Special thanks go to Bettina Eick
+  for her r\^ole in completing this project.[133X
+  
+  
+  -------------------------------------------------------
+  
+  
+  [1XContents (Sophus)[101X
+  
+  1 [33X[0;0YThe theory[133X
+  2 [33X[0;0YA sample calculation with [5XSophus[105X[133X
+  3 [33X[0;0Y[5XSophus[105X functions[133X
+    3.1 [33X[0;0YSome general functions to compute with Lie algebras[133X
+      3.1-1 SophusTest
+      3.1-2 IsLieNilpotentOverFp
+      3.1-3 MinimalGeneratorNumber
+      3.1-4 AbelianLieAlgebra
+    3.2 [33X[0;0YFunctions to compute with nilpotent bases[133X
+      3.2-1 NilpotentBasis
+      3.2-2 LieNBWeights
+      3.2-3 LieNBDefinitions
+      3.2-4 IsNilpotentBasis
+      3.2-5 IsLieAlgebraWithNB
+    3.3 [33X[0;0YThe cover[133X
+      3.3-1 LieCover
+      3.3-2 CoverHomomorphism
+      3.3-3 CoverOf
+      3.3-4 IsLieCover
+      3.3-5 LieMultiplicator
+      3.3-6 LieNucleus
+    3.4 [33X[0;0YAutomorphisms of nilpotent Lie algebras[133X
+      3.4-1 NilpotentLieAutomorphism
+      3.4-2 IdentityNilpotentLieAutomorphism
+      3.4-3 IsNilpotentLieAutomorphism
+    3.5 [33X[0;0YAutomorphism group and isomorphism testing[133X
+      3.5-1 AutomorphismGroup
+      3.5-2 AutomorphismGroupNilpotentLieAlgebra
+      3.5-3 AreIsomorphicNilpotentLieAlgebras
+    3.6 [33X[0;0YDescendants[133X
+      3.6-1 Descendants
+      3.6-2 DescendantsOfStep1OfAbelianLieAlgebra
+    3.7 [33X[0;0YInput and output[133X
+      3.7-1 WriteLieAlgebraToString
+      3.7-2 ReadStringToNilpotentLieAlgebra
+      3.7-3 WriteLieAlgebraListToFile
+      3.7-4 SophusBuildManual
+      3.7-5 SophusBuildManualHTML
+  
+  
+  [32X
