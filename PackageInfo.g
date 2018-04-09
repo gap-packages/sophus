@@ -47,16 +47,17 @@ SetPackageInfo( rec(
 
   PackageDoc := rec(
     BookName  := "Sophus",
-    HTMLStart := "Doc/chap0.html",
-    PDFFile   := "Doc/manual.pdf",
-    SixFile   := "Doc/manual.six",
+    ArchiveURLSubset := ["doc"],
+    HTMLStart := "doc/chap0.html",
+    PDFFile   := "doc/manual.pdf",
+    SixFile   := "doc/manual.six",
     LongTitle := "Computing with nilpotent Lie algebras",
     Autoload := true 
   ),
 
   Dependencies := rec(
-    GAP := ">= 4.3fix4",
-    NeededOtherPackages := [["autpgrp","1.2"],["gapdoc", "0.9999"]],
+    GAP := ">= 4.7",
+    NeededOtherPackages := [["autpgrp","1.2"]],
     SuggestedOtherPackages := [],
     ExternalConditions := []
   ),
