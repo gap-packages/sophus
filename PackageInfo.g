@@ -1,7 +1,7 @@
 #############################################################################
 ##
-#W  PackageInfo.g            Sophus Package                  Csaba Schneider 
-##                                                               
+#W  PackageInfo.g            Sophus Package                  Csaba Schneider
+##
 
 
 SetPackageInfo( rec(
@@ -11,8 +11,8 @@ SetPackageInfo( rec(
   Version := "1.23dev",
   Date    := "03/02/2006",
 
-  Persons := [ 
-    rec( 
+  Persons := [
+    rec(
       LastName      := "Schneider",
       FirstNames    := "Csaba",
       IsAuthor      := true,
@@ -35,7 +35,7 @@ SetPackageInfo( rec(
       IsMaintainer  := true,
       Email         := "support@gap-system.org",
     ),
-  ],  
+  ],
 
   Status := "accepted",
   CommunicatedBy := "Alexander Konovalov (Zaporozhye)",
@@ -63,7 +63,7 @@ SetPackageInfo( rec(
     PDFFile   := "doc/manual.pdf",
     SixFile   := "doc/manual.six",
     LongTitle := "Computing with nilpotent Lie algebras",
-    Autoload := true 
+    Autoload := true
   ),
 
   Dependencies := rec(
@@ -74,7 +74,7 @@ SetPackageInfo( rec(
   ),
 
   AvailabilityTest := ReturnTrue,
-# TestFile := "",
+  TestFile := "tst/testall.g",
   Keywords := [ "nilpotent Lie algebras" ]
 
 ));
