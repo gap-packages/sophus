@@ -1,52 +1,23 @@
-<Chapter Label="Example">
-<Heading>A sample calculation with &Sophus;</Heading>
-
-Before listing  the functions of &Sophus;
-we present 
-a sample calculation to show the reader what &Sophus; is able 
-to compute. We list the isomorphism types
-of  the 7-dimensional nilpotent Lie algebras over 
-<Math>\mathbb F_2</Math>.
-
-<P/>
-There is just one nilpotent Lie algebra with dimension 1 and dimension 2. 
-We also set <A>L3</A> to be a list containing the abelian Lie algebra with
-dimension 3.
-
-<Example><![CDATA[
+#
 gap> L1 := [ AbelianLieAlgebra( GF(2), 1 ) ];;
 gap> L2 := [ AbelianLieAlgebra( GF(2), 2 ) ];;
 gap> L3 := [ AbelianLieAlgebra( GF(2), 3 ) ];;
-]]></Example>
 
-<P/>Any 3-dimensional non-abelian nilpotent Lie algebra is an immediate 
-descendant of a 2-dimensional Lie algebra. So we compute the step-1 
-descendants of <A>L1[1]</A> and append them to <A>L3</A>.
-
-<Example><![CDATA[
+#
 gap> Append( L3, Descendants( L2[1], 1 ));
 gap> L3;
 [ <Lie algebra of dimension 3 over GF(2)>, 
   <Lie algebra of dimension 3 over GF(2)> ]
-]]></Example>
 
-<P/>Now we compute the list of 4-dimensional Lie algebras. First we set <A>L4</A>
-to contain the 4-dimensional abelian Lie algebra. Then we compute the step-1
-descendants of the 3-dimensional algebras and append these descendants to 
-<A>L4</A>.
-
-<Example><![CDATA[
+#
 gap> L4 := [ AbelianLieAlgebra( GF(2), 4 ) ];;
 gap> for i in L3 do Append( L4, Descendants( i, 1 )); od;
 gap> L4;
 [ <Lie algebra of dimension 4 over GF(2)>, 
   <Lie algebra of dimension 4 over GF(2)>, 
   <Lie algebra of dimension 4 over GF(2)> ]
-]]></Example>
 
-<P/>We continue this way up to dimension~7. 
-
-<Example><![CDATA[
+#
 gap> L5 := [ AbelianLieAlgebra( GF(2), 5 ) ];;
 gap> for i in L3 do Append( L5, Descendants( i, 2 )); od;
 gap> for i in L4 do Append( L5, Descendants( i, 1 )); od;
@@ -60,18 +31,8 @@ gap> for i in L5 do Append( L7, Descendants( i, 2 )); od;
 gap> for i in L6 do Append( L7, Descendants( i, 1 )); od;
 gap> Length( L7 );
 202
-]]></Example>
 
-<P/>This computation shows that there are 202 pairwise non-isomorphic nilpotent
-Lie algebras over <Math>\mathbb F_2</Math>.
-
-<P/>
-Let us compute the automorphism group of a nilpotent Lie algebra from 
-our list. We compute this automorphism group in the hybrid format used by
-&Sophus;, then we compute this group as a standard &GAP; object.
-
-
-<Example><![CDATA[
+#
 gap> AutomorphismGroupOfNilpotentLieAlgebra( L7[100] );
 rec( agAutos := [ Aut: [ v.1, v.1+v.2, v.3, v.4, v.5, v.5+v.6, v.7 ], 
       Aut: [ v.1, v.2+v.3, v.3, v.4, v.5, v.6, v.7 ], 
@@ -90,18 +51,9 @@ rec( agAutos := [ Aut: [ v.1, v.1+v.2, v.3, v.4, v.5, v.5+v.6, v.7 ],
   liealg := <Lie algebra of dimension 7 over GF(2)>, 
   one := Aut: [ v.1, v.2, v.3, v.4, v.5, v.6, v.7 ], prime := 2, size := 4096 
  )
-gap> 
-gap> AutomorphismGroup( L7[100] );                     
+gap> AutomorphismGroup( L7[100] );
 <group with 12 generators>
-]]></Example>
 
-<P/> Finally let us check that two Lie algebras from our list are not
-isomorphic.
-
-<Example><![CDATA[
+#
 gap> AreIsomorphicNilpotentLieAlgebras( L7[100], L7[101] );
 false
-]]></Example>
-
-
-</Chapter>
