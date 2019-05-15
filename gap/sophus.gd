@@ -12,7 +12,8 @@ DeclareRepresentation( "IsNilpotentLieAutomorphismRep",
         ["mingenset", "mingensetimgs", "basis", "basisimgs", 
          "matrix"] );
 
-IsNilpotentLieAutomorphism := IsMapping and IsNilpotentLieAutomorphismRep;
+DeclareSynonym( "IsNilpotentLieAutomorphism",
+                IsMapping and IsNilpotentLieAutomorphismRep );
 
 DeclareProperty( "IsLieNilpotentOverFp", IsLieNilpotent );
 InstallTrueMethod(IsLieNilpotent, IsLieNilpotentOverFp);
