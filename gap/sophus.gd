@@ -15,6 +15,7 @@ DeclareRepresentation( "IsNilpotentLieAutomorphismRep",
 IsNilpotentLieAutomorphism := IsMapping and IsNilpotentLieAutomorphismRep;
 
 DeclareProperty( "IsLieNilpotentOverFp", IsLieNilpotent );
+InstallTrueMethod(IsLieNilpotent, IsLieNilpotentOverFp);
 
 DeclareAttribute( "AutomorphismGroupOfNilpotentLieAlgebra",
                   IsLieAlgebra );
@@ -51,10 +52,12 @@ DeclareOperation( "LiftIsomorphismToLieCover", [ IsLieAlgebra, IsLieAlgebra, IsM
 DeclareOperation( "AreIsomorphicNilpotentLieAlgebras", [ IsLieAlgebra, IsLieAlgebra ] );
 
 DeclareProperty( "IsLieAlgebraWithNB", IsLieNilpotentOverFp );
+InstallTrueMethod( IsLieAlgebra, IsLieAlgebraWithNB );
 
 DeclareAttribute( "NilpotentBasis", IsLieAlgebra, "mutable" );
     
 DeclareProperty( "IsNilpotentBasis", IsBasis );
+InstallTrueMethod( IsBasis, IsNilpotentBasis );
 
 DeclareAttribute( "LieNBDefinitions", IsNilpotentBasis );
 
