@@ -6,15 +6,13 @@
                      [1X Computing in nilpotent Lie algebras [101X
   
   
-                                      1.24
+                                      1.25
   
   
-                                  9 April 2018
+                                  1 March 2022
   
   
                                 Csaba Schneider
-  
-                                  The GAP Team
   
   
   
@@ -27,8 +25,6 @@
                 [33X[0;14YBelo Horizonte, Brasil[133X
   
   
-  The GAP Team
-      Email:    [7Xmailto:support@gap-system.org[107X
   
   -------------------------------------------------------
   [1XAbstract[101X

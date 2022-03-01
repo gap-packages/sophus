@@ -1,6 +1,6 @@
 name: Sophus
-version: 1.24
-date: 2018-04-09
+version: 1.25
+date: 2022-03-01
 description: |
     Computing in nilpotent Lie algebras
 
@@ -25,7 +25,7 @@ packageinfo: https://gap-packages.github.io/sophus/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-packages/sophus/releases/download/v1.24/sophus-1.24.tar.gz
+      url: https://github.com/gap-packages/sophus/releases/download/v1.25/sophus-1.25.tar.gz
 
 abstract: |
 
