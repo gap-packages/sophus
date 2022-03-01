@@ -1,5 +1,10 @@
 This file describes changes in the GAP package 'sophus'.
 
+* 1.25 (2022-03-01)
+
+  - Add `License` field to `PackageInfo.g`
+  - Various janitorial changes
+
 * 1.24 (2018-04-09)
 
   - Fix immediate method for IsLieNilpotentOverFp to require HasLeftActingDomain

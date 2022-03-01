@@ -8,8 +8,8 @@ SetPackageInfo( rec(
 
   PackageName := "Sophus",
   Subtitle := "Computing in nilpotent Lie algebras",
-  Version := "1.24",
-  Date    := "09/04/2018", # dd/mm/yyyy format
+  Version := "1.25",
+  Date    := "01/03/2022", # dd/mm/yyyy format
   License := "GPL-2.0-or-later",
 
   Persons := [
