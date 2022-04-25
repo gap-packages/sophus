@@ -39,7 +39,7 @@ SetPackageInfo( rec(
   ],
 
   Status := "accepted",
-  CommunicatedBy := "Alexander Konovalov (Zaporozhye)",
+  CommunicatedBy := "Olexandr Konovalov (Zaporizhzhia)",
   AcceptDate := "10/2004",
 
   PackageWWWHome  := "https://gap-packages.github.io/sophus/",
