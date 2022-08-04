@@ -7,6 +7,12 @@
 ## 
 
 
+BindGlobal( "SOPHUS_DualBasis", function( base )
+  local M;
+  M := NullspaceMat( TransposedMat( base ));
+  return TriangulizedMat( M );
+end );
+
 
 #############################################################################
 ##
@@ -39,7 +45,7 @@ function( dim, p )
     
     subs := List( els, x->Coefficients( Basis( M ), x ));
     subs := List( subs, x->Basis( Subspace( V, [x] )));
-    subs := List( subs, x->DualBasis( x ));
+    subs := List( subs, x->SOPHUS_DualBasis( x ));
     subs := List( subs, x->List( x, y->LinearCombination( Basis( M ), y )));
     subs := List( subs, x->Ideal( C, x ));
     
