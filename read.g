@@ -15,6 +15,5 @@ ReadPackage( "Sophus", "gap/allowable.gi" );
 ReadPackage( "Sophus", "gap/descendant.gi" );
 ReadPackage( "Sophus", "gap/lieisom.gi" );
 ReadPackage( "Sophus", "gap/io.gi" );
-ReadPackage( "Sophus", "gap/test.gi" );
 
 
