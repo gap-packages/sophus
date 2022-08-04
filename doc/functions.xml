@@ -288,11 +288,16 @@ descendants of a nilpotent Lie algebra <A>L</A>.
 
 <ManSection>
 <Meth Name="DescendantsOfStep1OfAbelianLieAlgebra" 
-         Arg="L, step"/>
+         Arg="d, p"/>
    <Description>
 Returns the <K>1</K>-step 
 descendants of the abelian Lie algebra with dimension <A>d</A> defined over
 the field of <A>p</A> elements.
+<Example><![CDATA[
+gap> DescendantsOfStep1OfAbelianLieAlgebra(4,3);
+[ <Lie algebra of dimension 5 over GF(3)>, 
+  <Lie algebra of dimension 5 over GF(3)> ]
+]]></Example>
    </Description>
 </ManSection>
 </Section>
