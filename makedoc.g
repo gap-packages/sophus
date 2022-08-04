@@ -8,7 +8,9 @@ if fail = LoadPackage("AutoDoc", ">= 2016.01.21") then
 fi;
 
 AutoDoc(rec(
-    scaffold := rec( MainPage := false ),
-    gapdoc := rec( main := "manual.xml" ),
+    scaffold := rec(
+        includes := [ "intro.xml", "example.xml", "functions.xml" ],
+        bib := "manual.bib",
+    ),
     extract_examples := true,
 ));
