@@ -110,10 +110,10 @@ end );
 ##
 ## Constructs the identity automorphism of <L>
 
-IdentityNilpotentLieAutomorphism := function( L )
+BindGlobal( "IdentityNilpotentLieAutomorphism", function( L )
     local a;
     a := NilpotentLieAutomorphism( L, NilpotentBasis( L ), AsList( NilpotentBasis( L )));          return a;
-end;
+end );
 
 
 

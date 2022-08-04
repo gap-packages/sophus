@@ -11,7 +11,7 @@
 #F TryPermOperationNL( A ) . . . . . . . . resets A.glOper to perms or nothing
 ##
 
-TryPermOperationNL := function( A )
+BindGlobal( "TryPermOperationNL", function( A )
     local L, r, p, base, V, norm, f, M, iso, P;
 
     # if its too big, then don't try.
@@ -37,7 +37,7 @@ TryPermOperationNL := function( A )
 
     # and get images
     A.glOper := GeneratorsOfGroup( P );
-end;  
+end );  
 
 
 
@@ -46,7 +46,7 @@ end;
 #F ReducePermOperNL( A )
 ##
 
-ReducePermOperNL := function(A)
+BindGlobal( "ReducePermOperNL", function(A)
     local P, B, phom, gens, auts;
     
     Info( InfoAutGrp, 4, "  reduce permutation operation");
@@ -66,7 +66,7 @@ ReducePermOperNL := function(A)
 
     Info( InfoAutGrp, 4, "  factor has size ",A.glOrder," and ",
                          Length(A.glAutos)," generators");
-end;
+end );
 
 
 
@@ -75,7 +75,7 @@ end;
 #F TrySolvableSubgroupNL( A )
 ##
 
-TrySolvableSubgroupNL := function( A )
+BindGlobal( "TrySolvableSubgroupNL", function( A )
     local P, B, N, pcgs, phom, nhom, G, auts, gens;
 
     Info( InfoAutGrp, 4, "  try solvable normal subgroup");
@@ -116,7 +116,7 @@ TrySolvableSubgroupNL := function( A )
     Info( InfoAutGrp, 4, "  factor has size ",A.glOrder," and ", 
                          Length(A.glAutos)," generators");
 
-end;
+end );
 
 
 #############################################################################
@@ -126,7 +126,7 @@ end;
 ## try to compute a perm rep and, if successful, compute N.
 ##
 
-NiceInitGroupNL := function( A, flag )
+BindGlobal( "NiceInitGroupNL", function( A, flag )
 
     Info( InfoAutGrp, 3, "  nice init group");
 
@@ -150,7 +150,7 @@ NiceInitGroupNL := function( A, flag )
             TrySolvableSubgroupNL( A );
         fi;
     fi;
-end;
+end );
 
 
     

@@ -70,7 +70,7 @@ end );
 ## Corrects the weights.
 
 
-AdjustWeights := function( weights, A, offset )
+BindGlobal( "AdjustWeights", function( weights, A, offset )
     local changed, zero, a, vect, i, collvect, wrongweight, newweight;
     
     
@@ -102,7 +102,7 @@ AdjustWeights := function( weights, A, offset )
     until not changed;
     
     return weights;
-end;
+end );
 
        
                 

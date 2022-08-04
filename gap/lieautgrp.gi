@@ -56,7 +56,7 @@ function( a )
 ##   the generators of <A> to the Lie cover, and returns the record so 
 ##   obtained.
 
-LiftNLAutGrpToLieCover := function( A )
+BindGlobal( "LiftNLAutGrpToLieCover", function( A )
         
     return rec( 
            glAutos := List( A.glAutos, x -> LiftAutorphismToLieCover( x )),
@@ -68,7 +68,7 @@ LiftNLAutGrpToLieCover := function( A )
            liealg := LieCover( A.liealg ),     
            size := A.size );
     
-end;
+end );
 
 
 
@@ -114,7 +114,7 @@ end );
 ##  Computes the matrix group induced by the action of the automorphisms
 ##  in <A> on the multiplicator.
 
-LinearActionpOfGroupOnMultiplier := function( A  )
+BindGlobal( "LinearActionpOfGroupOnMultiplier", function( A  )
     local aut, L;
     
     if A.glAutos <> [] then 
@@ -134,7 +134,7 @@ LinearActionpOfGroupOnMultiplier := function( A  )
     A.field := LeftActingDomain( L );
     A.prime := Characteristic( A.field );
     A.one!.mat := 1;
-end;
+end );
 
 
 
@@ -144,7 +144,7 @@ end;
 ## 
 ## Computes the generators for the central automorphisms.
 
-CentralAutosNL := function( L, N )
+BindGlobal( "CentralAutosNL", function( L, N )
     local baseN, baseL, cent, b, i, imgs, aut;
 
     baseN := Basis(N);
@@ -159,7 +159,7 @@ CentralAutosNL := function( L, N )
         od;
     od;
     return cent;
-end;
+end );
 
 #############################################################################
 ##
@@ -169,7 +169,7 @@ end;
 ## of <L>. <K> is an <A>-invariant quotient of <C>. Computes the induced
 ## automorphisms on <K>
 
-RestrictAutomorphismsToQuotient := function( A, C, K )
+BindGlobal( "RestrictAutomorphismsToQuotient", function( A, C, K )
     local L, Q, new, aut, basis, mingensetL, mingensetQ, imgs, h, cent,
           dimL, dimC, M, heads, remaining, T, new_T, newimgs, img, imgcomp, c, row, laut, i;
     
@@ -283,7 +283,7 @@ RestrictAutomorphismsToQuotient := function( A, C, K )
     new.size := new.glOrder*Product( new.agOrder );
     
     return new;
-end;
+end );
 
 
 #############################################################################
