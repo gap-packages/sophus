@@ -15,7 +15,7 @@
 ## Transforms compact form to list of coefficients
 ##
 
-Compact2Coeffs := function( comp, dim, zero )
+BindGlobal( "Compact2Coeffs", function( comp, dim, zero )
     local i, coeffs;
     
     coeffs := List( [1..dim], x->zero );
@@ -25,7 +25,7 @@ Compact2Coeffs := function( comp, dim, zero )
     od;
     
     return coeffs;
-end;
+end );
 
 
 
@@ -36,7 +36,7 @@ end;
 ## Transforms list of coefficients to compact form
 ##
 
-Coeff2Compact := function( coeffs )
+BindGlobal( "Coeff2Compact", function( coeffs )
     local i, comp, zero;
     
     zero := 0*coeffs[1];
@@ -49,7 +49,7 @@ Coeff2Compact := function( coeffs )
     od;
     
     return comp;
-end;
+end );
 
 
 
@@ -60,7 +60,7 @@ end;
 ## Transforms list of coefficients to the format required by SCTable
 ##
 
-Coeffs2SCTableForm := function( coeffs )
+BindGlobal( "Coeffs2SCTableForm", function( coeffs )
     local i, sctf, zero;
     
     sctf := [];
@@ -73,7 +73,7 @@ Coeffs2SCTableForm := function( coeffs )
     od;
     
     return sctf;
-end;
+end );
 
 
 
@@ -84,7 +84,7 @@ end;
 ## Transforms native SCTableFormat to the format required by SCTable
 ##
 
-NativeSCTableForm2SCTableForm := function( form )
+BindGlobal( "NativeSCTableForm2SCTableForm", function( form )
     local i, new;
     
     new := [];
@@ -94,7 +94,7 @@ NativeSCTableForm2SCTableForm := function( form )
     od;
     
     return new;
-end;
+end );
 
 
 
@@ -105,7 +105,7 @@ end;
 ## Computes the sum of two SCTable elements.
 ##
 
-SumSCT := function( a, b )
+BindGlobal( "SumSCT", function( a, b )
     local length, posa, posb, sum, zero;
     
     if a = [[],[]] then
@@ -148,7 +148,7 @@ SumSCT := function( a, b )
     Info( LieInfo, 2, "Sum: ", a, "+", b, "=", sum );
     
     return sum;
-end;
+end );
 
 
 
@@ -159,7 +159,7 @@ end;
 ## Computes the product of two SCTable elements.
 ##
 
-ProductSCT := function( T, a, b )
+BindGlobal( "ProductSCT", function( T, a, b )
     local dim, zero, prod, i, j, c;
     
     dim := Length( T ) - 2;
@@ -179,7 +179,7 @@ ProductSCT := function( T, a, b )
     od;
     
     return prod;
-end;
+end );
 
 
 
@@ -191,7 +191,7 @@ end;
 ## GAP functions.
 ##
 
-LieQuotientTable := function( T, A, offset )
+BindGlobal( "LieQuotientTable", function( T, A, offset )
     local new_T, dim, newdim, heads, newbasis, prodcoeffs, 
           u, v, prod, i, line, zero, c, row;
     
@@ -230,7 +230,7 @@ LieQuotientTable := function( T, A, offset )
     od;
     
     return new_T;
-end;
+end );
 
                     
 

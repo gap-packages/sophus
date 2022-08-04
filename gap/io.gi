@@ -15,11 +15,11 @@
 ##
 ##  Write the structure constants table of <L> to <file> under <name>.
 
-WriteLieAlgebraToFile := function( L, name, file )
+BindGlobal( "WriteLieAlgebraToFile", function( L, name, file )
     
     AppendTo( file,  name, " := ", StructureConstantsTable( Basis( L )), ";\n");
  
-end;
+end );
 
 
 
@@ -29,7 +29,7 @@ end;
 ##
 ##  Encodes <L> into a string.
 
-WriteNilpotentLieAlgebraToString := function( L )
+BindGlobal( "WriteNilpotentLieAlgebraToString", function( L )
     local b, x, y, dim, coeffs, p, sum, i, base, d, string, q, r, digits;
     
     b := Basis( L );
@@ -82,7 +82,7 @@ WriteNilpotentLieAlgebraToString := function( L )
     
             
     return string;
-end;
+end );
 
 
 
@@ -93,7 +93,7 @@ end;
 ##  Converts <string> to a <dim>-dimensional nilpotent Lie algebra over the
 ##  field of <p> elements.
 
-ReadStringToNilpotentLieAlgebra := function( string, p, dim )
+BindGlobal( "ReadStringToNilpotentLieAlgebra", function( string, p, dim )
     local digits, d, sum, i, coeffs, no_coeffs, T, pos, a, b, scentry, r, q, L;
     
     digits := ['0','1','2','3','4','5','6','7','8','9',
@@ -153,7 +153,7 @@ ReadStringToNilpotentLieAlgebra := function( string, p, dim )
     L := LieAlgebraByStructureConstants( GF(p), T );
     Setter( IsLieNilpotentOverFp )( L, true );
     return L;
-end;
+end );
 
 
 
@@ -165,7 +165,7 @@ end;
 ##  of strings into <file> under <name>.
 
 
-WriteLieAlgebraListToFile := function( list, name, file )
+BindGlobal( "WriteLieAlgebraListToFile", function( list, name, file )
     
     local i;
 
@@ -180,10 +180,10 @@ WriteLieAlgebraListToFile := function( list, name, file )
         AppendTo( file, "\"", WriteNilpotentLieAlgebraToString( list[i] ), "\", " );
     od;
     
-    	AppendTo( file, "\"", 
-                  WriteNilpotentLieAlgebraToString( list[Length( list )] ), 
-                  "\" ];" );
-end;
+    AppendTo( file, "\"", 
+              WriteNilpotentLieAlgebraToString( list[Length( list )] ), 
+              "\" ];" );
+end );
 
       
 #############################################################################
@@ -194,19 +194,19 @@ end;
 ##  the list of strings into <filename> under <name>.
 
 
-WriteDescendantsToFile := function( l, step, name, filename )
+BindGlobal( "WriteDescendantsToFile", function( l, step, name, filename )
     local i, d;
     
     
     PrintTo( filename, name, ":= [ " );
     Print( " mult has dim ", Dimension( LieMultiplicator( LieCover( l ))), "\n" );
     d := Descendants( l, step );
-        if d <> [] then
-            for l in d{[1..Length( d ) - 1]} do
-                AppendTo( filename, "\"", WriteNilpotentLieAlgebraToString( l ), "\", " ); 
-             od;
-             AppendTo( filename, "\"", WriteNilpotentLieAlgebraToString( d[Length( d )] ), "\" ];" );
-            else
-                AppendTo( filename, " ];" );
-            fi;
-        end;
+    if d <> [] then
+        for l in d{[1..Length( d ) - 1]} do
+            AppendTo( filename, "\"", WriteNilpotentLieAlgebraToString( l ), "\", " ); 
+        od;
+        AppendTo( filename, "\"", WriteNilpotentLieAlgebraToString( d[Length( d )] ), "\" ];" );
+    else
+        AppendTo( filename, " ];" );
+    fi;
+end );

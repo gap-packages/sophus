@@ -5,7 +5,7 @@
 #W  Testing the Sophus package
 ##
 
-SophusTest := function()
+BindGlobal( "SophusTest", function()
 	local i, L1, L2, L3, L4, L5, L6, L7, size;
 
 
@@ -150,6 +150,6 @@ SophusTest := function()
 	Print(  "Test passed. No problem found\n" );
 
 	return true;
-end;	 
+end );	 
 	
 

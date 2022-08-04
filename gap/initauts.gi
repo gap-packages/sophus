@@ -16,9 +16,9 @@
 #F NLAFingerprintSmall( <L>, <U> )
 ##
 
-NLAFingerprintSmall := function( L, U )
+BindGlobal( "NLAFingerprintSmall", function( L, U )
     return Dimension( ProductSpace( L, U ));
-end;
+end );
 
 
 
@@ -27,7 +27,7 @@ end;
 #F NLAFingerprintMedium( <L>, <U> )
 ##
 
-NLAFingerprintMedium := function( L, U )
+BindGlobal( "NLAFingerprintMedium", function( L, U )
     local ranks, invs, comm, all, cls, fus, new, w;
 
     w := LieNBWeights( NilpotentBasis( U ));
@@ -43,7 +43,7 @@ NLAFingerprintMedium := function( L, U )
     Sort( cls );
 
     return Concatenation( ranks, invs, [comm], cls );
-end;
+end );
 
 
 
@@ -52,12 +52,12 @@ end;
 #F NLAFingerprintLarge( <L>, <U> )
 ##
 
-NLAFingerprintLarge := function( L, U )
+BindGlobal( "NLAFingerprintLarge", function( L, U )
     local w;
     
     w := LieNBWeights( NilpotentBasis( U ));
     return List( [1..w[Length( w )]], x->Position( w, x ));
-end;
+end );
 
 
 
@@ -66,10 +66,10 @@ end;
 #F NLAFingerprintHuge( <L>, <U> )
 ##
 
-NLAFingerprintHuge := function( L, U )
+BindGlobal( "NLAFingerprintHuge", function( L, U )
     
     return List( LieDerivedSeries(U), Size );
-end;
+end );
 
 
 
@@ -78,7 +78,7 @@ end;
 #F NLAFingerprint( <L>, <U> )
 ##
 
-NLAFingerprint := function ( L, U )
+BindGlobal( "NLAFingerprint", function ( L, U )
     if Size( U ) <= 255 and IsRecord( ID_AVAILABLE( Size(U) ) ) then
         return NLAFingerprintSmall( L, U );
     elif Size( U ) <= 1000 then
@@ -88,7 +88,7 @@ NLAFingerprint := function ( L, U )
     else
         return NLAFingerprintSmall( L, U );
     fi;
-end;
+end );
 
 
 
@@ -97,7 +97,7 @@ end;
 #F PartitionMinimalOveralgebras ( L, basis, norm )
 ##
 
-PartitionMinimalOveralgebras := function( L, basis, norm )
+BindGlobal( "PartitionMinimalOveralgebras", function( L, basis, norm )
     local min, done, part, i, tup, pos, d, D, f, Q;
 
     Info( LieInfo, 3, "  computing partition ");
@@ -123,7 +123,7 @@ PartitionMinimalOveralgebras := function( L, basis, norm )
     od;
     Sort( part, function( x, y ) return Length(x) < Length(y); end );
     return part;
-end;
+end );
 
 
 
@@ -132,14 +132,14 @@ end;
 #F NLAAutoOfMat( mat, H )
 ##
 
-NLAAutoOfMat := function( mat, H )
+BindGlobal( "NLAAutoOfMat", function( mat, H )
     local img, aut, basis;
     
     basis := NilpotentBasis(H);
     img := List( mat, x -> LinearCombination( basis, x ));
     aut := NilpotentLieAutomorphism( H, basis, img );
     return aut;
-end;
+end );
 
 
 
@@ -148,7 +148,7 @@ end;
 #F InitAgAutosNL( H, p )
 ##
 
-InitAgAutosNL := function( H, p )
+BindGlobal( "InitAgAutosNL", function( H, p )
     local basis, auts, alpha, fac, i, imgs;
     if p <> 2 then
         basis  := NilpotentBasis(H);
@@ -164,7 +164,7 @@ InitAgAutosNL := function( H, p )
     else
         return rec( auts := [], rels := [] );
     fi;
-end;
+end );
 
 
 
@@ -173,7 +173,7 @@ end;
 #F InitNLAAutomorphismGroupOver( L )
 ##
 
-InitNLAAutomorphismGroupOver := function( L )
+BindGlobal( "InitNLAAutomorphismGroupOver", function( L )
     local r, p, npbasis, base, V, norm, part, stab, H, kern, A;
 
     Info( LieInfo, 1, "Initialize automorphism group: Over ");
@@ -223,7 +223,7 @@ InitNLAAutomorphismGroupOver := function( L )
     NiceInitGroupNL( A, true );
     #Error();
     return A;
-end;
+end );
 
 
 
@@ -232,18 +232,18 @@ end;
 #F PGCharSubalgebras( L )
 ##
 
-SomeCharSubalgebras := function( L )
+BindGlobal( "SomeCharSubalgebras", function( L )
     local  cent, omega;
     
     return LieUpperCentralSeries( L );
-end;
+end );
 
 #############################################################################
 ##
 #F AbelianQuotientBase( basis, U )
 ##
 
-AbelianQuotientBase := function( basis, U )
+BindGlobal( "AbelianQuotientBase", function( basis, U )
     local r;
     
     
@@ -254,19 +254,19 @@ AbelianQuotientBase := function( basis, U )
     fi;
     return List( Basis( U ), x -> Coefficients( basis, x ){[1..r]} );
     
-end;
+end );
 
 #############################################################################
 ##
 #F InitGlAutosNL( H, mats )
 ##
 
-InitGlAutosNL := function( H, mats )
+BindGlobal( "InitGlAutosNL", function( H, mats )
     local basis;
     basis := NilpotentBasis( H );
     return List( mats, x -> NilpotentLieAutomorphism( H, basis, List( x, 
                        y -> LinearCombination( basis, y) ) ) );
-end;
+end );
 
 
 
@@ -275,7 +275,7 @@ end;
 #F InitNLAutomorphismGroupChar( L ) 
 ##
 
-InitNLAutomorphismGroupChar := function( L )
+BindGlobal( "InitNLAutomorphismGroupChar", function( L )
     local r, p, chars, bases, S, H, A, z, bas, kern;
 
     Info( InfoAutGrp, 2, "  init automorphism group : Char ");
@@ -314,7 +314,7 @@ InitNLAutomorphismGroupChar := function( L )
     # try to construct perm rep
     NiceInitGroupNL( A, true );
     return A;
-end;
+end );
 
 
 
@@ -323,7 +323,7 @@ end;
 #F InitNLAutomorphismGroup( L )
 ##
 
-InitNLAutomorphismGroup := function( L )
+BindGlobal( "InitNLAutomorphismGroup", function( L )
     local r, f, S, H, A, kern;
 
     Info( LieInfo, 1, "  init automorphism group (full).");
@@ -348,6 +348,6 @@ InitNLAutomorphismGroup := function( L )
     A.size    := A.glOrder * Product( A.agOrder );
 
     return A;
-end;
+end );
 
 

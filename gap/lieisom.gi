@@ -14,7 +14,7 @@
 #F  RestrictIsomorphismToLieMultiplicator( <C>, <g> )
 ## 
 
-RestrictIsomorphismToLieMultiplicator := function( C, g )
+BindGlobal( "RestrictIsomorphismToLieMultiplicator", function( C, g )
     local M, BM, BC;
     
     M := LieMultiplicator( C ); 
@@ -23,7 +23,7 @@ RestrictIsomorphismToLieMultiplicator := function( C, g )
     return List( BM, x -> Coefficients( BM, 
                    LinearCombination( BC, Coefficients( BC, x )*g )));
     
-end;
+end );
 
 
 
@@ -91,7 +91,7 @@ end );
 ##
 #F ApplyAut( <M>, <U>, <g> ) 
 
-ApplyAut := function( M, U, g )
+BindGlobal( "ApplyAut", function( M, U, g )
     local basU, basM;
     
     basU := Basis( U );
@@ -100,7 +100,7 @@ ApplyAut := function( M, U, g )
     return Subspace( M, List( basU, x -> LinearCombination( basM, 
                    Coefficients( basM, x )^g )));
     
-end;
+end );
 
 
 

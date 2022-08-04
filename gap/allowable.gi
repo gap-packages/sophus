@@ -18,7 +18,7 @@
 ##  function is called before the orbit computation. The generating set 
 ##  it returns is not necessarily minimal!
 
-ReduceGenSet := function( G )
+BindGlobal( "ReduceGenSet", function( G )
     local i, E, gens, newgens, PG, f, min, x, y;
     
     Info( LieInfo, 1, "Computing minimal set of generators." );
@@ -49,7 +49,7 @@ ReduceGenSet := function( G )
     Info( LieInfo, 1, "Min gen set found with ", Length( min ), " generators." );
     
     return Group( min );
-end;
+end );
 
 
 
@@ -60,7 +60,7 @@ end;
 ##  A different function to do pretty much the same as the previous one.
 ##  It is used for experimenting.
 
-ReduceGenSet2 := function( G )
+BindGlobal( "ReduceGenSet2", function( G )
     local i, gens, newgens, length, maxel, newsize, maxsize;
 
     Info( LieInfo, 1, "Computing small set of generators." );
@@ -90,7 +90,7 @@ ReduceGenSet2 := function( G )
     Info( LieInfo, 1, "Min gen set found with ", Length( gens ), " generators." );
 
     return Group( gens );
-end;
+end );
 
 
 
@@ -99,7 +99,7 @@ end;
 #F HeadVector( <v> )
 ##  
 
-HeadVector := function( v )
+BindGlobal( "HeadVector", function( v )
     local i;
     
     for i in [1..Length( v )] do
@@ -109,7 +109,7 @@ HeadVector := function( v )
     od;
     
     return fail;
-end;
+end );
 
 
 
@@ -120,7 +120,7 @@ end;
 ##  Returns the set of definitions with respect to a vectorspace M and its
 ##  subspace N. 
 
-DefinitionSet := function( M, N )
+BindGlobal( "DefinitionSet", function( M, N )
     local dim, F, R, U, basU, basN, defset, eqset, coeffs, i;
     
     dim := Length( Basis( M )[1] );
@@ -152,7 +152,7 @@ DefinitionSet := function( M, N )
     od;
         
     return rec( defset := defset, eqset := eqset );
-end;
+end );
 
 
 #############################################################################
@@ -161,10 +161,10 @@ end;
 ##  
 ##  Computes the number of allowable positions.
 
-NrOfAllowablePositions := function( comb, dim2 )
+BindGlobal( "NrOfAllowablePositions", function( comb, dim2 )
         
     return Sum( List( comb, x->dim2-x ))-Sum( [1..Length( comb )-1], x->x );
-end;
+end );
 
 
 
@@ -174,14 +174,14 @@ end;
 ##  
 ##  returns true if <pos> is allowable with respect to <comb>.
 
-IsAllowablePosition := function( comb, pos )
+BindGlobal( "IsAllowablePosition", function( comb, pos )
     
     if pos[2] <= comb[pos[1]] or pos[2] in comb then
         return false;
     else 
         return true;
     fi;
-end;
+end );
 
 
 #############################################################################
@@ -189,7 +189,7 @@ end;
 #F NrsWithDefsets( <dim1>, <dim2>, <dimN>, <p> )
 ##  
 
-NrsWithDefsets := function( dim1, dim2, dimN, p )
+BindGlobal( "NrsWithDefsets", function( dim1, dim2, dimN, p )
     
     local combs, list, comb;
     
@@ -202,7 +202,7 @@ NrsWithDefsets := function( dim1, dim2, dimN, p )
     
     return list;
     
-end;
+end );
 
 #############################################################################
 ##
@@ -212,7 +212,7 @@ end;
 ##  the orbits on the set of allowable subgroups.
 ##
 
-ComputeAllowableInfo := function( dim1, dim2, dimN, p )
+BindGlobal( "ComputeAllowableInfo", function( dim1, dim2, dimN, p )
     
     local allowablepositions, list, comb, i, j, 
           combinations, nrswithdefsets, nrsofallowablepositions;
@@ -241,7 +241,7 @@ ComputeAllowableInfo := function( dim1, dim2, dimN, p )
                 nrswithdefsets := nrswithdefsets,
                 nrsofallowablepositions := List( allowablepositions, Length ), 
                 allowablepositions := allowablepositions );
-end;
+end );
 
 #############################################################################
 ##
@@ -251,7 +251,7 @@ end;
 ##  nucleus <N>.
 ##
 
-StandardMatrix := function( M, N )
+BindGlobal( "StandardMatrix", function( M, N )
     local dim, F, R, Defspace, eqset, gens, imgs, count, basM, theta, 
           i, defset, defs;
     
@@ -296,7 +296,7 @@ StandardMatrix := function( M, N )
     
     return TransposedMat( List( [1..dim], x-> Coefficients( Basis( Defspace ), 
                    Basis( R )[x]^theta )));
-end;
+end );
 
 
 #############################################################################
@@ -307,7 +307,7 @@ end;
 ##  necessary for the computation of the label.
 ##
 
-LabelOfMatrix := function( M, info )
+BindGlobal( "LabelOfMatrix", function( M, info )
     local p, defset, defsetpos, list, i, j, number, offset;
     
     p := info.p;
@@ -328,11 +328,11 @@ LabelOfMatrix := function( M, info )
     offset := Sum( info.nrswithdefsets{[1..defsetpos-1]});
         
     return offset + number;
-end;
+end );
 
-CharValue := function( c )
+BindGlobal( "CharValue", function( c )
     return Position( [ '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' ], c ) - 1;
-end;
+end );
 
 
 #############################################################################
@@ -343,7 +343,7 @@ end;
 ##  information necessary for the computation of the matrix.
 ##
 
-MatrixOfLabel := function( label, info )
+BindGlobal( "MatrixOfLabel", function( label, info )
     local number, defset, positions, entries, i, M, j, count, 
           nodefset, sum, nrs, offset, dim1, dim2, p, e, z;
     
@@ -386,7 +386,7 @@ MatrixOfLabel := function( label, info )
     od;
         
     return M;
-end;
+end );
 
 
 
@@ -399,7 +399,7 @@ end;
 ##  <g>. <info> contains information necessary for this computation.
 ##
 
-PermutationOnAllowableSubgroups := function( g, info )
+BindGlobal( "PermutationOnAllowableSubgroups", function( g, info )
     local els, remaining, first, list, lists, i, mat;
     
     els := [0..Sum( info.nrswithdefsets )-1];
@@ -414,10 +414,10 @@ PermutationOnAllowableSubgroups := function( g, info )
        if i mod 10000  = 0 then Print( i, "\n" ); fi; 
    od;
    return list;
-end;
+end );
 
 
-AllowableSubgroupByMatrix := function( mat )
+BindGlobal( "AllowableSubgroupByMatrix", function( mat )
     local dim_dom, dim_im, p, domain, image, basis_domain, ims;
 
     dim_dom := Length( mat[1] );
@@ -430,7 +430,7 @@ AllowableSubgroupByMatrix := function( mat )
 
     return Kernel( LeftModuleHomomorphismByImages( domain, image,
                    basis_domain, ims ));
-end;
+end );
 
 #############################################################################
 ##
@@ -442,7 +442,7 @@ end;
 ##  multiplicator. Returns the orbits on the allowable subgroups.
 ##
 
-OrbitsOfAllowableSubgroups := function( dim1, dim2, dimN, p, G )
+BindGlobal( "OrbitsOfAllowableSubgroups", function( dim1, dim2, dimN, p, G )
     local positions, els, act, info, orbs, gens, p_gens, PG, f, stabs;
 
     
@@ -472,7 +472,7 @@ OrbitsOfAllowableSubgroups := function( dim1, dim2, dimN, p, G )
 
     return List( orbs, x -> AllowableSubgroupByMatrix( 
                    MatrixOfLabel( x[1], info )));
-end;
+end );
 
 
 #############################################################################
@@ -483,7 +483,7 @@ end;
 ##  matrix that correspond to <K>. Only used for testing and experimenting.
 ##
 
-LabelOfDescendant := function( L, K )
+BindGlobal( "LabelOfDescendant", function( L, K )
     local C, d, M, N, p, V, f, bK, bN, posN, order, trans, mat, info;
     
     C := LieCover( L );
@@ -516,7 +516,7 @@ LabelOfDescendant := function( L, K )
     
     return LabelOfMatrix( mat, info );
     
-end;
+end );
 
 #############################################################################
 ##
@@ -527,7 +527,7 @@ end;
 ##  the orbit of <K>. Only used for testing and experimenting.
 ##
 
-OrbitOfDescendant := function( L, K )
+BindGlobal( "OrbitOfDescendant", function( L, K )
     local C, d, M, N, p, V, f, bK, bN, posN, order, trans, 
           mat, info, label, act, G, gens, i, A, x, y;
     
@@ -574,7 +574,7 @@ OrbitOfDescendant := function( L, K )
     
     return Orbit( G, label, act );
     
-end;
+end );
 
 
 #############################################################################
@@ -586,7 +586,7 @@ end;
 ##  and experimenting.
 ##
 
-SameOrbitOfDescendant := function( L, K1, K2 )
+BindGlobal( "SameOrbitOfDescendant", function( L, K1, K2 )
     local C, d, M, N, p, V, f, bK, bN, posN, order, trans, 
           mat, info, label1, label2, act, G, gens, i, A, x, y;
     
@@ -636,4 +636,4 @@ SameOrbitOfDescendant := function( L, K1, K2 )
     return RepresentativeAction( G, label1, label2, act );
     
      
-end;
+end );
