@@ -1,5 +1,11 @@
 This file describes changes in the GAP package 'sophus'.
 
+* 1.26 (2022-08-05)
+
+  - Make global functions in this package read-only to prevent
+    accidents caused by overwriting them with different code
+  - Various janitorial changes
+
 * 1.25 (2022-03-01)
 
   - Add `License` field to `PackageInfo.g`
