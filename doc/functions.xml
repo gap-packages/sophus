@@ -320,7 +320,7 @@ Returns a string that encodes the nilpotent Lie algebra <A>L</A>
 </ManSection>
 
 <ManSection>
-   <Func Name="ReadStringToNilpotentLieAlgebra" 
+   <Func Name="ReadStringToNilpotentLieAlgebraOverFp"
          Arg="string, p, d"/>
    <Description>
 Decodes <A>string</A> into a <A>d</A>-dimensional nilpotent Lie algebra

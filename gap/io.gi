@@ -88,12 +88,12 @@ end );
 
 #############################################################################
 ##
-#F ReadStringToNilpotentLieAlgebra( <string>, <p>, <dim> ) 
+#F ReadStringToNilpotentLieAlgebraOverFp( <string>, <p>, <dim> ) 
 ##
 ##  Converts <string> to a <dim>-dimensional nilpotent Lie algebra over the
 ##  field of <p> elements.
 
-BindGlobal( "ReadStringToNilpotentLieAlgebra", function( string, p, dim )
+BindGlobal( "ReadStringToNilpotentLieAlgebraOverFp", function( string, p, dim )
     local digits, d, sum, i, coeffs, no_coeffs, T, pos, a, b, scentry, r, q, L;
     
     digits := ['0','1','2','3','4','5','6','7','8','9',
