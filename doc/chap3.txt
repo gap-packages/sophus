@@ -231,9 +231,9 @@
   
   [33X[0;0YReturns a string that encodes the nilpotent Lie algebra [3XL[103X[133X
   
-  [1X3.7-2 ReadStringToNilpotentLieAlgebra[101X
+  [1X3.7-2 ReadStringToNilpotentLieAlgebraOverFp[101X
   
-  [33X[1;0Y[29X[2XReadStringToNilpotentLieAlgebra[102X( [3Xstring[103X, [3Xp[103X, [3Xd[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XReadStringToNilpotentLieAlgebraOverFp[102X( [3Xstring[103X, [3Xp[103X, [3Xd[103X ) [32X function[133X
   
   [33X[0;0YDecodes  [3Xstring[103X  into a [3Xd[103X-dimensional nilpotent Lie algebra defined over the
   field of [3Xp[103X elements.[133X

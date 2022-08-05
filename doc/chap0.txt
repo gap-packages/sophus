@@ -95,7 +95,7 @@
       3.6-2 DescendantsOfStep1OfAbelianLieAlgebra
     3.7 [33X[0;0YInput and output[133X
       3.7-1 WriteLieAlgebraToString
-      3.7-2 ReadStringToNilpotentLieAlgebra
+      3.7-2 ReadStringToNilpotentLieAlgebraOverFp
       3.7-3 WriteLieAlgebraListToFile
   
   

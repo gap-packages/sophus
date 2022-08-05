@@ -25,7 +25,7 @@
   [2XMinimalGeneratorNumber[102X 3.1-3 
   [2XNilpotentBasis[102X 3.2-1 
   [2XNilpotentLieAutomorphism[102X 3.4-1 
-  [2XReadStringToNilpotentLieAlgebra[102X 3.7-2 
+  [2XReadStringToNilpotentLieAlgebraOverFp[102X 3.7-2 
   [2XSophusTest[102X 3.1-1 
   [2XWriteLieAlgebraListToFile[102X 3.7-3 
   [2XWriteLieAlgebraToString[102X 3.7-1 
