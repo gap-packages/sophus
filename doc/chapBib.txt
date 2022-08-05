@@ -11,7 +11,7 @@
   [17XLAGUNA, Lie AlGebras and UNits of group Algebras[117X, A GAP 4 package.
   
   [[20XSch[120X]  [16XSchneider,  C.[116X,  [17XA  computer-based  approach to the classification of
-  nilpotent Lie algebras[117X, ((arxiv.org/math.RA/0406365)).
+  nilpotent Lie algebras[117X, (arxiv.org/math.RA/0406365).
   
   
   

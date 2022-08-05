@@ -8,8 +8,8 @@ SetPackageInfo( rec(
 
   PackageName := "Sophus",
   Subtitle := "Computing in nilpotent Lie algebras",
-  Version := "1.25",
-  Date    := "01/03/2022", # dd/mm/yyyy format
+  Version := "1.26",
+  Date    := "05/08/2022", # dd/mm/yyyy format
   License := "GPL-2.0-or-later",
 
   Persons := [
@@ -39,7 +39,7 @@ SetPackageInfo( rec(
   ],
 
   Status := "accepted",
-  CommunicatedBy := "Alexander Konovalov (Zaporozhye)",
+  CommunicatedBy := "Olexandr Konovalov (Zaporizhzhia)",
   AcceptDate := "10/2004",
 
   PackageWWWHome  := "https://gap-packages.github.io/sophus/",
@@ -60,7 +60,7 @@ SetPackageInfo( rec(
   PackageDoc := rec(
     BookName  := "Sophus",
     ArchiveURLSubset := ["doc"],
-    HTMLStart := "doc/chap0.html",
+    HTMLStart := "doc/chap0_mj.html",
     PDFFile   := "doc/manual.pdf",
     SixFile   := "doc/manual.six",
     LongTitle := "Computing with nilpotent Lie algebras",

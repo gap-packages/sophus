@@ -1,0 +1,34 @@
+  
+  
+  [1XIndex[101X
+  
+  [2XAbelianLieAlgebra[102X 3.1-4 
+  [2XAreIsomorphicNilpotentLieAlgebras[102X 3.5-3 
+  [2XAutomorphismGroup[102X 3.5-1 
+  [2XAutomorphismGroupNilpotentLieAlgebra[102X 3.5-2 
+  [2XCoverHomomorphism[102X 3.3-2 
+  [2XCoverOf[102X 3.3-3 
+  [2XDescendants[102X 3.6-1 
+  [2XDescendantsOfStep1OfAbelianLieAlgebra[102X 3.6-2 
+  [2XIdentityNilpotentLieAutomorphism[102X 3.4-2 
+  [2XIsLieAlgebraWithNB[102X 3.2-5 
+  [2XIsLieCover[102X 3.3-4 
+  [2XIsLieNilpotentOverFp[102X 3.1-2 
+  [2XIsNilpotentBasis[102X 3.2-4 
+  [2XIsNilpotentLieAutomorphism[102X 3.4-3 
+  License .-2 
+  [2XLieCover[102X 3.3-1 
+  [2XLieMultiplicator[102X 3.3-5 
+  [2XLieNBDefinitions[102X 3.2-3 
+  [2XLieNBWeights[102X 3.2-2 
+  [2XLieNucleus[102X 3.3-6 
+  [2XMinimalGeneratorNumber[102X 3.1-3 
+  [2XNilpotentBasis[102X 3.2-1 
+  [2XNilpotentLieAutomorphism[102X 3.4-1 
+  [2XReadStringToNilpotentLieAlgebra[102X 3.7-2 
+  [2XSophusTest[102X 3.1-1 
+  [2XWriteLieAlgebraListToFile[102X 3.7-3 
+  [2XWriteLieAlgebraToString[102X 3.7-1 
+  
+  
+  -------------------------------------------------------

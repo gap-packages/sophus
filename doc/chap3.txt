@@ -207,10 +207,16 @@
   
   [1X3.6-2 DescendantsOfStep1OfAbelianLieAlgebra[101X
   
-  [33X[1;0Y[29X[2XDescendantsOfStep1OfAbelianLieAlgebra[102X( [3XL[103X, [3Xstep[103X ) [32X method[133X
+  [33X[1;0Y[29X[2XDescendantsOfStep1OfAbelianLieAlgebra[102X( [3Xd[103X, [3Xp[103X ) [32X method[133X
   
   [33X[0;0YReturns  the  [9X1[109X-step descendants of the abelian Lie algebra with dimension [3Xd[103X
   defined over the field of [3Xp[103X elements.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XDescendantsOfStep1OfAbelianLieAlgebra(4,3);[127X[104X
+    [4X[28X[ <Lie algebra of dimension 5 over GF(3)>, [128X[104X
+    [4X[28X  <Lie algebra of dimension 5 over GF(3)> ][128X[104X
+  [4X[32X[104X
   
   
   [1X3.7 [33X[0;0YInput and output[133X[101X

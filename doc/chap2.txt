@@ -85,7 +85,7 @@
     [4X[28X  one := Aut: [ v.1, v.2, v.3, v.4, v.5, v.6, v.7 ], prime := 2, size := 4096 [128X[104X
     [4X[28X )[128X[104X
     [4X[25Xgap>[125X [27X[127X[104X
-    [4X[25Xgap>[125X [27XAutomorphismGroup( L7[100] );                     [127X[104X
+    [4X[25Xgap>[125X [27XAutomorphismGroup( L7[100] );[127X[104X
     [4X[28X<group with 12 generators>[128X[104X
   [4X[32X[104X
   
