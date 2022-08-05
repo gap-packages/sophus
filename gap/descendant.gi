@@ -8,9 +8,7 @@
 
 
 BindGlobal( "SOPHUS_DualBasis", function( base )
-  local M;
-  M := NullspaceMat( TransposedMat( base ));
-  return TriangulizedMat( M );
+  return TriangulizedNullspaceMat( TransposedMat( base ) );
 end );
 
 
