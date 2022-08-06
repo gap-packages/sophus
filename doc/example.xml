@@ -99,6 +99,8 @@ gap> AutomorphismGroup( L7[100] );
 isomorphic.
 
 <Example><![CDATA[
+gap> AreIsomorphicNilpotentLieAlgebras( L7[100], L7[100] );
+true
 gap> AreIsomorphicNilpotentLieAlgebras( L7[100], L7[101] );
 false
 ]]></Example>

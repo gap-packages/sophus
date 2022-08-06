@@ -67,7 +67,9 @@ gap>
 gap> AutomorphismGroup( L7[100] );
 <group with 12 generators>
 
-# doc/example.xml:101-104
+# doc/example.xml:101-106
+gap> AreIsomorphicNilpotentLieAlgebras( L7[100], L7[100] );
+true
 gap> AreIsomorphicNilpotentLieAlgebras( L7[100], L7[101] );
 false
 
