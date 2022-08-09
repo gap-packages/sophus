@@ -1,5 +1,11 @@
 This file describes changes in the GAP package 'sophus'.
 
+* 1.27 (2022-08-09)
+
+  - Speed up AreIsomorphicNilpotentLieAlgebras substantially (e.g. the
+  `AreIsomorphicNilpotentLieAlgebras( L7[100], L7[100] );` example from
+  the manual is 15 times faster now)
+
 * 1.26 (2022-08-05)
 
   - Make global functions in this package read-only to prevent
