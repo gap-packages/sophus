@@ -202,7 +202,9 @@ end );
         Info( LieInfo, 1, "Time to set up computation: ", Runtime() - t );
         t := Runtime();
         
-        OS := OrbitStabilizer( Group( A ), KL, function( U, g ) 
+        A := Group( A );
+        Size(A); # ensure size is known, speeds up the OrbitStabilizer compputation
+        OS := OrbitStabilizer( A, KL, function( U, g )
             return ApplyAut( ML, U, RestrictIsomorphismToLieMultiplicator( CL, g )); end); 
             
         O := OS.orbit; 
@@ -214,7 +216,7 @@ end );
         t := Runtime();
         
         if KKim in O then
-            isoKL := RepresentativeAction( Group( A ), O, 
+            isoKL := RepresentativeAction( A, O,
                              KL, KKim,  function( U, g ) 
                 return ApplyAut( ML, U, RestrictIsomorphismToLieMultiplicator( CL, g )); end); 
         else
