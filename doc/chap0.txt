@@ -6,10 +6,10 @@
                      [1X Computing in nilpotent Lie algebras [101X
   
   
-                                      1.26
+                                      1.27
   
   
-                                 5 August 2022
+                                 9 August 2022
   
   
                                 Csaba Schneider
