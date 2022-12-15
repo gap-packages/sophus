@@ -8,7 +8,7 @@
 DeclareInfoClass( "LieInfo" );
 
 DeclareRepresentation( "IsNilpotentLieAutomorphismRep",
-                       IsAlgebraGeneralMapping,
+                       IsAlgebraGeneralMapping and IsComponentObjectRep,
         ["mingenset", "mingensetimgs", "basis", "basisimgs", 
          "matrix"] );
 

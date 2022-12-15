@@ -201,7 +201,7 @@ in the usual manner.
 </ManSection>
 
 <ManSection>
-   <Prop Name="IsNilpotentLieAutomorphism" 
+   <Filt Name="IsNilpotentLieAutomorphism"
          Arg="A"/>
    <Description>
 Returns <K>true</K> if <A>A</A> was obtained 
