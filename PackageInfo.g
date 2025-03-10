@@ -64,7 +64,6 @@ SetPackageInfo( rec(
     PDFFile   := "doc/manual.pdf",
     SixFile   := "doc/manual.six",
     LongTitle := "Computing with nilpotent Lie algebras",
-    Autoload := true
   ),
 
   Dependencies := rec(
