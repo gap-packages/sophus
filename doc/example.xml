@@ -54,7 +54,7 @@ gap> L6 := [ AbelianLieAlgebra( GF(2), 6 ) ];;
 gap> for i in L3 do Append( L6, Descendants( i, 3 )); od;
 gap> for i in L4 do Append( L6, Descendants( i, 2 )); od;
 gap> for i in L5 do Append( L6, Descendants( i, 1 )); od;
-gap> L7 := [ AbelianLieAlgebra( GF(2), 6 ) ];;
+gap> L7 := [ AbelianLieAlgebra( GF(2), 7 ) ];;
 gap> for i in L4 do Append( L7, Descendants( i, 3 )); od;
 gap> for i in L5 do Append( L7, Descendants( i, 2 )); od;
 gap> for i in L6 do Append( L7, Descendants( i, 1 )); od;
