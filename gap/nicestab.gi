@@ -91,7 +91,7 @@ BindGlobal( "TrySolvableSubgroupNL", function( A )
     #Error();
 
     # get normal subgroup
-    N := RadicalGroup( P );
+    N := SolvableRadical( P );
     pcgs := Pcgs( N ); 
     Info( InfoAutGrp, 4, "  found pcgs of length ", Length(pcgs));
     if Length(pcgs) = 0 then return; fi;
