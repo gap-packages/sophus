@@ -43,35 +43,6 @@ end );
 
 #############################################################################
 ##
-#F ReducePermOperNL( A )
-##
-
-BindGlobal( "ReducePermOperNL", function(A)
-    local P, B, phom, gens, auts;
-    
-    Info( InfoAutGrp, 4, "  reduce permutation operation");
-    
-    # get perm group
-    P := Group( A.glOper, ());
-    B := Group( A.glAutos );
-    SetSize( P, A.glOrder );
-    
-    # mapping from A to permgroup P
-    phom := GroupHomomorphismByImagesNC( B, P, A.glAutos, A.glOper );
-    gens := SmallGeneratingSet(P);
-    gens := Filtered( gens, x -> Order(x) > 1 );
-    auts := List( gens, x -> PreImagesRepresentative( phom, x ) );
-    A.glAutos := auts;
-    A.glOper  := gens;
-
-    Info( InfoAutGrp, 4, "  factor has size ",A.glOrder," and ",
-                         Length(A.glAutos)," generators");
-end );
-
-
-
-#############################################################################
-##
 #F TrySolvableSubgroupNL( A )
 ##
 
@@ -144,11 +115,7 @@ BindGlobal( "NiceInitGroupNL", function( A, flag )
 
     # finally, if a perm oper is given, then try to enlarge agAutos
     if IsPerm( A.glOper[1] ) and flag then
-        if REDU_OPER then
-            ReducePermOperNL( A );
-        else
-            TrySolvableSubgroupNL( A );
-        fi;
+        TrySolvableSubgroupNL( A );
     fi;
 end );
 
